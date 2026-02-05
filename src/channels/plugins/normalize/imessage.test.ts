@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { normalizeIMessageMessagingTarget } from "./imessage.js";
 
-describe("imessage target normalization", () => {
+// Skipped: iMessage channel removed
+describe.skip("imessage target normalization", () => {
   it("preserves service prefixes for handles", () => {
     expect(normalizeIMessageMessagingTarget("sms:+1 (555) 222-3333")).toBe("sms:+15552223333");
   });

@@ -53,7 +53,8 @@ describe("buildThreadingToolContext", () => {
     expect(result.currentChannelId).toBe("chat:99");
   });
 
-  it("uses the sender handle for iMessage direct chats", () => {
+  // Skipped: iMessage channel removed
+  it.skip("uses the sender handle for iMessage direct chats", () => {
     const sessionCtx = {
       Provider: "imessage",
       ChatType: "direct",
@@ -70,7 +71,8 @@ describe("buildThreadingToolContext", () => {
     expect(result.currentChannelId).toBe("imessage:+15550001");
   });
 
-  it("uses chat_id for iMessage groups", () => {
+  // Skipped: iMessage channel removed
+  it.skip("uses chat_id for iMessage groups", () => {
     const sessionCtx = {
       Provider: "imessage",
       ChatType: "group",

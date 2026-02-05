@@ -90,7 +90,8 @@ describe("deliverOutboundPayloads", () => {
     );
   });
 
-  it("uses signal media maxBytes from config", async () => {
+  // Skipped: Signal channel removed
+  it.skip("uses signal media maxBytes from config", async () => {
     const sendSignal = vi.fn().mockResolvedValue({ messageId: "s1", timestamp: 123 });
     const cfg: CmlHiveAssistConfig = { channels: { signal: { mediaMaxMb: 2 } } };
 
@@ -115,7 +116,8 @@ describe("deliverOutboundPayloads", () => {
     expect(results[0]).toMatchObject({ channel: "signal", messageId: "s1" });
   });
 
-  it("chunks Signal markdown using the format-first chunker", async () => {
+  // Skipped: Signal channel removed
+  it.skip("chunks Signal markdown using the format-first chunker", async () => {
     const sendSignal = vi.fn().mockResolvedValue({ messageId: "s1", timestamp: 123 });
     const cfg: CmlHiveAssistConfig = {
       channels: { signal: { textChunkLimit: 20 } },
@@ -244,7 +246,8 @@ describe("deliverOutboundPayloads", () => {
     expect(chunker).toHaveBeenNthCalledWith(1, text, 4000);
   });
 
-  it("uses iMessage media maxBytes from agent fallback", async () => {
+  // Skipped: iMessage channel removed
+  it.skip("uses iMessage media maxBytes from agent fallback", async () => {
     const sendIMessage = vi.fn().mockResolvedValue({ messageId: "i1" });
     setActivePluginRegistry(
       createTestRegistry([

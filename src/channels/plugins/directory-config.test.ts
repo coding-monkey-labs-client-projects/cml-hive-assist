@@ -47,7 +47,8 @@ describe("directory (config-backed)", () => {
     expect(groups?.map((e) => e.id)).toEqual(["channel:c111"]);
   });
 
-  it("lists Discord peers/groups from config (numeric ids only)", async () => {
+  // Skipped: Discord channel removed
+  it.skip("lists Discord peers/groups from config (numeric ids only)", async () => {
     const cfg = {
       channels: {
         discord: {

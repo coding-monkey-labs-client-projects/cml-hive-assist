@@ -1,8 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { RuntimeEnv } from "../runtime.js";
-import { discordPlugin } from "../../extensions/discord/src/channel.js";
-import { imessagePlugin } from "../../extensions/imessage/src/channel.js";
-import { signalPlugin } from "../../extensions/signal/src/channel.js";
+// Removed: Discord, iMessage, Signal channels removed
+// import { discordPlugin } from "../../extensions/discord/src/channel.js";
+// import { imessagePlugin } from "../../extensions/imessage/src/channel.js";
+// import { signalPlugin } from "../../extensions/signal/src/channel.js";
 import { slackPlugin } from "../../extensions/slack/src/channel.js";
 import { telegramPlugin } from "../../extensions/telegram/src/channel.js";
 import { whatsappPlugin } from "../../extensions/whatsapp/src/channel.js";

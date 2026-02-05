@@ -3,7 +3,8 @@ import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { withTempHome } from "./test-helpers.js";
 
-describe("config discord", () => {
+// Skipped: Discord channel removed
+describe.skip("config discord", () => {
   let previousHome: string | undefined;
 
   beforeEach(() => {

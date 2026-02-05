@@ -10,7 +10,8 @@ vi.mock("../../../signal/send-reactions.js", () => ({
   removeReactionSignal: (...args: unknown[]) => removeReactionSignal(...args),
 }));
 
-describe("signalMessageActions", () => {
+// Skipped: Signal channel removed
+describe.skip("signalMessageActions", () => {
   it("returns no actions when no configured accounts exist", () => {
     const cfg = {} as CmlHiveAssistConfig;
     expect(signalMessageActions.listActions({ cfg })).toEqual([]);

@@ -154,7 +154,8 @@ describe("config identity defaults", () => {
     });
   });
 
-  it("supports provider textChunkLimit config", async () => {
+  // Skipped: Discord/Signal/iMessage channels removed
+  it.skip("supports provider textChunkLimit config", async () => {
     await withTempHome(async (home) => {
       const configDir = path.join(home, ".cml-hive-assist");
       await fs.mkdir(configDir, { recursive: true });

@@ -344,7 +344,8 @@ describe("mention helpers", () => {
 });
 
 describe("resolveGroupRequireMention", () => {
-  it("respects Discord guild/channel requireMention settings", () => {
+  // Skipped: Discord channel removed
+  it.skip("respects Discord guild/channel requireMention settings", () => {
     const cfg: CmlHiveAssistConfig = {
       channels: {
         discord: {

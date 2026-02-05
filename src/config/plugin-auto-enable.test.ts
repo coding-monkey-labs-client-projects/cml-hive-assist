@@ -60,7 +60,8 @@ describe("applyPluginAutoEnable", () => {
     expect(result.changes).toEqual([]);
   });
 
-  describe("preferOver channel prioritization", () => {
+  // Skipped: iMessage channel removed
+  describe.skip("preferOver channel prioritization", () => {
     it("prefers bluebubbles: skips imessage auto-enable when both are configured", () => {
       const result = applyPluginAutoEnable({
         config: {

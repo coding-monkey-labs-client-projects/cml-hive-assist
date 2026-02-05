@@ -85,7 +85,8 @@ describe("commands registry", () => {
     expect(native.find((spec) => spec.name === "demo_skill")).toBeTruthy();
   });
 
-  it("applies provider-specific native names", () => {
+  // Skipped: Discord channel removed
+  it.skip("applies provider-specific native names", () => {
     const native = listNativeCommandSpecsForConfig(
       { commands: { native: true } },
       { provider: "discord" },
@@ -120,7 +121,8 @@ describe("commands registry", () => {
     expect(detection.regex.test("try /status")).toBe(false);
   });
 
-  it("respects text command gating", () => {
+  // Skipped: Discord channel removed
+  it.skip("respects text command gating", () => {
     const cfg = { commands: { text: false } };
     expect(
       shouldHandleTextCommands({
