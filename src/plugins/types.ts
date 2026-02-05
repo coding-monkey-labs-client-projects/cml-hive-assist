@@ -195,7 +195,9 @@ export type CmlHiveAssistPluginCliContext = {
   logger: PluginLogger;
 };
 
-export type CmlHiveAssistPluginCliRegistrar = (ctx: CmlHiveAssistPluginCliContext) => void | Promise<void>;
+export type CmlHiveAssistPluginCliRegistrar = (
+  ctx: CmlHiveAssistPluginCliContext,
+) => void | Promise<void>;
 
 export type CmlHiveAssistPluginServiceContext = {
   config: CmlHiveAssistConfig;
@@ -250,7 +252,10 @@ export type CmlHiveAssistPluginApi = {
     opts?: CmlHiveAssistPluginHookOptions,
   ) => void;
   registerHttpHandler: (handler: CmlHiveAssistPluginHttpHandler) => void;
-  registerHttpRoute: (params: { path: string; handler: CmlHiveAssistPluginHttpRouteHandler }) => void;
+  registerHttpRoute: (params: {
+    path: string;
+    handler: CmlHiveAssistPluginHttpRouteHandler;
+  }) => void;
   registerChannel: (registration: CmlHiveAssistPluginChannelRegistration | ChannelPlugin) => void;
   registerGatewayMethod: (method: string, handler: GatewayRequestHandler) => void;
   registerCli: (registrar: CmlHiveAssistPluginCliRegistrar, opts?: { commands?: string[] }) => void;

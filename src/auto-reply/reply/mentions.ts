@@ -55,7 +55,10 @@ function resolveMentionPatterns(cfg: CmlHiveAssistConfig | undefined, agentId?: 
   return derived.length > 0 ? derived : [];
 }
 
-export function buildMentionRegexes(cfg: CmlHiveAssistConfig | undefined, agentId?: string): RegExp[] {
+export function buildMentionRegexes(
+  cfg: CmlHiveAssistConfig | undefined,
+  agentId?: string,
+): RegExp[] {
   const patterns = normalizeMentionPatterns(resolveMentionPatterns(cfg, agentId));
   return patterns
     .map((pattern) => {

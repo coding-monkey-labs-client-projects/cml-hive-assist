@@ -1,5 +1,9 @@
 import chokidar from "chokidar";
-import type { CmlHiveAssistConfig, ConfigFileSnapshot, GatewayReloadMode } from "../config/config.ts";
+import type {
+  CmlHiveAssistConfig,
+  ConfigFileSnapshot,
+  GatewayReloadMode,
+} from "../config/config.ts";
 import { type ChannelId, listChannelPlugins } from "../channels/plugins/index.ts";
 import { getActivePluginRegistry } from "../plugins/runtime.ts";
 

@@ -103,7 +103,9 @@ export function createGatewayReloadHandlers(params: {
           params.logHooks.error(`gmail watcher failed to start: ${String(err)}`);
         }
       } else {
-        params.logHooks.info("skipping gmail watcher restart (CML_HIVE_ASSIST_SKIP_GMAIL_WATCHER=1)");
+        params.logHooks.info(
+          "skipping gmail watcher restart (CML_HIVE_ASSIST_SKIP_GMAIL_WATCHER=1)",
+        );
       }
     }
 

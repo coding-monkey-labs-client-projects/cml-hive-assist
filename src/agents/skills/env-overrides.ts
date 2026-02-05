@@ -3,7 +3,10 @@ import type { SkillEntry, SkillSnapshot } from "./types.ts";
 import { resolveSkillConfig } from "./config.ts";
 import { resolveSkillKey } from "./frontmatter.ts";
 
-export function applySkillEnvOverrides(params: { skills: SkillEntry[]; config?: CmlHiveAssistConfig }) {
+export function applySkillEnvOverrides(params: {
+  skills: SkillEntry[];
+  config?: CmlHiveAssistConfig;
+}) {
   const { skills, config } = params;
   const updates: Array<{ key: string; prev: string | undefined }> = [];
 

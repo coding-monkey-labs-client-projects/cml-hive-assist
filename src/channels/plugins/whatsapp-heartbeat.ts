@@ -1,7 +1,7 @@
 import type { CmlHiveAssistConfig } from "../../config/config.ts";
-import { normalizeChatChannelId } from "../registry.ts";
 import { loadSessionStore, resolveStorePath } from "../../config/sessions.ts";
 import { normalizeE164 } from "../../utils.ts";
+import { normalizeChatChannelId } from "../registry.ts";
 
 type HeartbeatRecipientsResult = { recipients: string[]; source: string };
 type HeartbeatRecipientsOpts = { to?: string; all?: boolean };

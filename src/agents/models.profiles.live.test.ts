@@ -15,9 +15,12 @@ import { ensureCmlHiveAssistModelsJson } from "./models-config.js";
 import { isRateLimitErrorMessage } from "./pi-embedded-helpers/errors.js";
 import { discoverAuthStorage, discoverModels } from "./pi-model-discovery.js";
 
-const LIVE = isTruthyEnvValue(process.env.LIVE) || isTruthyEnvValue(process.env.CML_HIVE_ASSIST_LIVE_TEST);
+const LIVE =
+  isTruthyEnvValue(process.env.LIVE) || isTruthyEnvValue(process.env.CML_HIVE_ASSIST_LIVE_TEST);
 const DIRECT_ENABLED = Boolean(process.env.CML_HIVE_ASSIST_LIVE_MODELS?.trim());
-const REQUIRE_PROFILE_KEYS = isTruthyEnvValue(process.env.CML_HIVE_ASSIST_LIVE_REQUIRE_PROFILE_KEYS);
+const REQUIRE_PROFILE_KEYS = isTruthyEnvValue(
+  process.env.CML_HIVE_ASSIST_LIVE_REQUIRE_PROFILE_KEYS,
+);
 
 const describeLive = LIVE ? describe : describe.skip;
 

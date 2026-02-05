@@ -21,8 +21,13 @@ describe("argv helpers", () => {
 
   it("extracts command path ignoring flags and terminator", () => {
     expect(getCommandPath(["node", "cml-hive-assist", "status", "--json"], 2)).toEqual(["status"]);
-    expect(getCommandPath(["node", "cml-hive-assist", "agents", "list"], 2)).toEqual(["agents", "list"]);
-    expect(getCommandPath(["node", "cml-hive-assist", "status", "--", "ignored"], 2)).toEqual(["status"]);
+    expect(getCommandPath(["node", "cml-hive-assist", "agents", "list"], 2)).toEqual([
+      "agents",
+      "list",
+    ]);
+    expect(getCommandPath(["node", "cml-hive-assist", "status", "--", "ignored"], 2)).toEqual([
+      "status",
+    ]);
   });
 
   it("returns primary command", () => {
@@ -36,37 +41,49 @@ describe("argv helpers", () => {
   });
 
   it("extracts flag values with equals and missing values", () => {
-    expect(getFlagValue(["node", "cml-hive-assist", "status", "--timeout", "5000"], "--timeout")).toBe(
-      "5000",
-    );
+    expect(
+      getFlagValue(["node", "cml-hive-assist", "status", "--timeout", "5000"], "--timeout"),
+    ).toBe("5000");
     expect(getFlagValue(["node", "cml-hive-assist", "status", "--timeout=2500"], "--timeout")).toBe(
       "2500",
     );
-    expect(getFlagValue(["node", "cml-hive-assist", "status", "--timeout"], "--timeout")).toBeNull();
-    expect(getFlagValue(["node", "cml-hive-assist", "status", "--timeout", "--json"], "--timeout")).toBe(
-      null,
-    );
-    expect(getFlagValue(["node", "cml-hive-assist", "--", "--timeout=99"], "--timeout")).toBeUndefined();
+    expect(
+      getFlagValue(["node", "cml-hive-assist", "status", "--timeout"], "--timeout"),
+    ).toBeNull();
+    expect(
+      getFlagValue(["node", "cml-hive-assist", "status", "--timeout", "--json"], "--timeout"),
+    ).toBe(null);
+    expect(
+      getFlagValue(["node", "cml-hive-assist", "--", "--timeout=99"], "--timeout"),
+    ).toBeUndefined();
   });
 
   it("parses verbose flags", () => {
     expect(getVerboseFlag(["node", "cml-hive-assist", "status", "--verbose"])).toBe(true);
     expect(getVerboseFlag(["node", "cml-hive-assist", "status", "--debug"])).toBe(false);
-    expect(getVerboseFlag(["node", "cml-hive-assist", "status", "--debug"], { includeDebug: true })).toBe(
-      true,
-    );
+    expect(
+      getVerboseFlag(["node", "cml-hive-assist", "status", "--debug"], { includeDebug: true }),
+    ).toBe(true);
   });
 
   it("parses positive integer flag values", () => {
-    expect(getPositiveIntFlagValue(["node", "cml-hive-assist", "status"], "--timeout")).toBeUndefined();
+    expect(
+      getPositiveIntFlagValue(["node", "cml-hive-assist", "status"], "--timeout"),
+    ).toBeUndefined();
     expect(
       getPositiveIntFlagValue(["node", "cml-hive-assist", "status", "--timeout"], "--timeout"),
     ).toBeNull();
     expect(
-      getPositiveIntFlagValue(["node", "cml-hive-assist", "status", "--timeout", "5000"], "--timeout"),
+      getPositiveIntFlagValue(
+        ["node", "cml-hive-assist", "status", "--timeout", "5000"],
+        "--timeout",
+      ),
     ).toBe(5000);
     expect(
-      getPositiveIntFlagValue(["node", "cml-hive-assist", "status", "--timeout", "nope"], "--timeout"),
+      getPositiveIntFlagValue(
+        ["node", "cml-hive-assist", "status", "--timeout", "nope"],
+        "--timeout",
+      ),
     ).toBeUndefined();
   });
 
@@ -99,13 +116,21 @@ describe("argv helpers", () => {
       programName: "cml-hive-assist",
       rawArgs: ["node-22.2.exe", "cml-hive-assist", "status"],
     });
-    expect(versionedNodeWindowsPatchlessArgv).toEqual(["node-22.2.exe", "cml-hive-assist", "status"]);
+    expect(versionedNodeWindowsPatchlessArgv).toEqual([
+      "node-22.2.exe",
+      "cml-hive-assist",
+      "status",
+    ]);
 
     const versionedNodeWithPathArgv = buildParseArgv({
       programName: "cml-hive-assist",
       rawArgs: ["/usr/bin/node-22.2.0", "cml-hive-assist", "status"],
     });
-    expect(versionedNodeWithPathArgv).toEqual(["/usr/bin/node-22.2.0", "cml-hive-assist", "status"]);
+    expect(versionedNodeWithPathArgv).toEqual([
+      "/usr/bin/node-22.2.0",
+      "cml-hive-assist",
+      "status",
+    ]);
 
     const nodejsArgv = buildParseArgv({
       programName: "cml-hive-assist",
@@ -117,7 +142,13 @@ describe("argv helpers", () => {
       programName: "cml-hive-assist",
       rawArgs: ["node-dev", "cml-hive-assist", "status"],
     });
-    expect(nonVersionedNodeArgv).toEqual(["node", "cml-hive-assist", "node-dev", "cml-hive-assist", "status"]);
+    expect(nonVersionedNodeArgv).toEqual([
+      "node",
+      "cml-hive-assist",
+      "node-dev",
+      "cml-hive-assist",
+      "status",
+    ]);
 
     const directArgv = buildParseArgv({
       programName: "cml-hive-assist",

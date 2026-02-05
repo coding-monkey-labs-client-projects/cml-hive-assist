@@ -130,7 +130,10 @@ name: my-hook
 description: "Short description of what this hook does"
 homepage: https://docs.cml-hive-assist.ai/hooks#my-hook
 metadata:
-  { "cml-hive-assist": { "emoji": "🔗", "events": ["command:new"], "requires": { "bins": ["node"] } } }
+  {
+    "cml-hive-assist":
+      { "emoji": "🔗", "events": ["command:new"], "requires": { "bins": ["node"] } },
+  }
 ---
 
 # My Hook

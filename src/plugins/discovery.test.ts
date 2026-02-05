@@ -78,7 +78,7 @@ describe("discoverCmlHiveAssistPlugins", () => {
       path.join(globalExt, "package.json"),
       JSON.stringify({
         name: "pack",
-        cml-hive-assist: { extensions: ["./src/one.ts", "./src/two.ts"] },
+        "cml-hive-assist": { extensions: ["./src/one.ts", "./src/two.ts"] },
       }),
       "utf-8",
     );
@@ -112,7 +112,7 @@ describe("discoverCmlHiveAssistPlugins", () => {
       path.join(globalExt, "package.json"),
       JSON.stringify({
         name: "@cml-hive-assist/voice-call",
-        cml-hive-assist: { extensions: ["./src/index.ts"] },
+        "cml-hive-assist": { extensions: ["./src/index.ts"] },
       }),
       "utf-8",
     );
@@ -140,7 +140,7 @@ describe("discoverCmlHiveAssistPlugins", () => {
       path.join(packDir, "package.json"),
       JSON.stringify({
         name: "@cml-hive-assist/demo-plugin-dir",
-        cml-hive-assist: { extensions: ["./index.js"] },
+        "cml-hive-assist": { extensions: ["./index.js"] },
       }),
       "utf-8",
     );

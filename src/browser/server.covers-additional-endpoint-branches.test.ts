@@ -95,7 +95,7 @@ vi.mock("../config/config.js", async (importOriginal) => {
         headless: true,
         defaultProfile: "cml-hive-assist",
         profiles: {
-          cml-hive-assist: { cdpPort: testPort + 1, color: "#FF4500" },
+          "cml-hive-assist": { cdpPort: testPort + 1, color: "#FF4500" },
         },
       },
     }),
@@ -475,7 +475,9 @@ describe("backward compatibility (profile parameter)", () => {
 
     await realFetch(`${base}/start`, { method: "POST" });
 
-    const result = (await realFetch(`${base}/tabs?profile=cml-hive-assist`).then((r) => r.json())) as {
+    const result = (await realFetch(`${base}/tabs?profile=cml-hive-assist`).then((r) =>
+      r.json(),
+    )) as {
       running: boolean;
       tabs: unknown[];
     };

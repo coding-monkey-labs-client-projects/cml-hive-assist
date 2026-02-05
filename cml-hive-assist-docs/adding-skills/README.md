@@ -20,17 +20,18 @@ This directory contains guidelines for creating new skills in CML Hive Assist **
 ## The No-Code Advantage
 
 Skills are pure Markdown - no programming required:
+
 - Define capabilities in plain English
 - Add examples and workflows
 - Let the AI agent interpret and execute
 
 ## Where Skills Live
 
-| Location | Purpose | Priority |
-|----------|---------|----------|
-| `~/.cml-hive-assist/workspace/skills/` | Your custom skills | Highest |
-| `~/.cml-hive-assist/skills/` | Downloaded skills | Medium |
-| `<install>/skills/` | Bundled skills | Lowest |
+| Location                               | Purpose            | Priority |
+| -------------------------------------- | ------------------ | -------- |
+| `~/.cml-hive-assist/workspace/skills/` | Your custom skills | Highest  |
+| `~/.cml-hive-assist/skills/`           | Downloaded skills  | Medium   |
+| `<install>/skills/`                    | Bundled skills     | Lowest   |
 
 ## Minimum Viable Skill
 
@@ -43,6 +44,7 @@ description: "What this skill does. Use when the user asks about X or wants to Y
 # My Skill
 
 Instructions for the AI agent:
+
 1. When the user asks about X, do Y
 2. Use the `tool-name` command for Z
 ```

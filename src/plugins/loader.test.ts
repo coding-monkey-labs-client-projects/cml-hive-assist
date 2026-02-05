@@ -179,7 +179,7 @@ describe("loadCmlHiveAssistPlugins", () => {
         name: "@cml-hive-assist/memory-core",
         version: "1.2.3",
         description: "Memory plugin package",
-        cml-hive-assist: { extensions: ["./index.ts"] },
+        "cml-hive-assist": { extensions: ["./index.ts"] },
       }),
       "utf-8",
     );

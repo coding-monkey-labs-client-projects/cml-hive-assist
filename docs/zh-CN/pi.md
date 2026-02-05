@@ -40,7 +40,7 @@ CmlHiveAssist 使用 pi SDK 将 AI 编程智能体嵌入其消息 Gateway网关�
 | `pi-ai`           | 核心 LLM 抽象：`Model`、`streamSimple`、消息类型、提供商 API                               |
 | `pi-agent-core`   | 智能体循环、工具执行、`AgentMessage` 类型                                                  |
 | `pi-coding-agent` | 高级 SDK：`createAgentSession`、`SessionManager`、`AuthStorage`、`ModelRegistry`、内置工具 |
-| `pi-tui`          | 终端 UI 组件（用于 CmlHiveAssist 的本地 TUI 模式）                                              |
+| `pi-tui`          | 终端 UI 组件（用于 CmlHiveAssist 的本地 TUI 模式）                                         |
 
 ## 文件结构
 
@@ -149,7 +149,7 @@ const result = await runEmbeddedPiAgent({
   sessionKey: "main:whatsapp:+1234567890",
   sessionFile: "/path/to/session.jsonl",
   workspaceDir: "/path/to/workspace",
-  config: cml-hive-assistConfig,
+  config: cml - hive - assistConfig,
   prompt: "Hello, how are you?",
   provider: "anthropic",
   model: "claude-sonnet-4-20250514",
@@ -506,15 +506,15 @@ import { ... } from "@mariozechner/pi-tui";
 
 ## 与 Pi CLI 的主要区别
 
-| 方面       | Pi CLI                  | CmlHiveAssist 嵌入式                                                                                 |
-| ---------- | ----------------------- | ----------------------------------------------------------------------------------------------- |
-| 调用方式   | `pi` 命令 / RPC         | 通过 `createAgentSession()` 使用 SDK                                                            |
-| 工具       | 默认编程工具            | 自定义 CmlHiveAssist 工具套件                                                                        |
-| 系统提示词 | AGENTS.md + 提示词      | 按渠道/上下文动态生成                                                                           |
+| 方面       | Pi CLI                  | CmlHiveAssist 嵌入式                                                                                   |
+| ---------- | ----------------------- | ------------------------------------------------------------------------------------------------------ |
+| 调用方式   | `pi` 命令 / RPC         | 通过 `createAgentSession()` 使用 SDK                                                                   |
+| 工具       | 默认编程工具            | 自定义 CmlHiveAssist 工具套件                                                                          |
+| 系统提示词 | AGENTS.md + 提示词      | 按渠道/上下文动态生成                                                                                  |
 | 会话存储   | `~/.pi/agent/sessions/` | `~/.cml-hive-assist/agents/<agentId>/sessions/`（或 `$OPENCLAW_STATE_DIR/agents/<agentId>/sessions/`） |
-| 认证       | 单一凭据                | 多配置文件轮换                                                                                  |
-| 扩展       | 从磁盘加载              | 编程式 + 磁盘路径                                                                               |
-| 事件处理   | TUI 渲染                | 基于回调（onBlockReply 等）                                                                     |
+| 认证       | 单一凭据                | 多配置文件轮换                                                                                         |
+| 扩展       | 从磁盘加载              | 编程式 + 磁盘路径                                                                                      |
+| 事件处理   | TUI 渲染                | 基于回调（onBlockReply 等）                                                                            |
 
 ## 未来考虑
 

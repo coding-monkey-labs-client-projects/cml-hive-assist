@@ -126,11 +126,11 @@ OpenProse 支持多种状态后端：
 
 OpenProse 程序映射到 CmlHiveAssist 原语：
 
-| OpenProse 概念       | CmlHiveAssist 工具    |
-| -------------------- | ---------------- |
-| 生成会话 / Task 工具 | `sessions_spawn` |
-| 文件读写             | `read` / `write` |
-| Web 获取             | `web_fetch`      |
+| OpenProse 概念       | CmlHiveAssist 工具 |
+| -------------------- | ------------------ |
+| 生成会话 / Task 工具 | `sessions_spawn`   |
+| 文件读写             | `read` / `write`   |
+| Web 获取             | `web_fetch`        |
 
 如果你的工具允许列表阻止了这些工具，OpenProse 程序将无法运行。参阅[Skills配置](/tools/skills-config)。
 

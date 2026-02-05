@@ -1,9 +1,9 @@
 import type { CmlHiveAssistConfig } from "../../config/config.ts";
-import type { DiscordConfig } from "../../config/types.ts";
 import type {
   GroupToolPolicyBySenderConfig,
   GroupToolPolicyConfig,
 } from "../../config/types.tools.ts";
+import type { DiscordConfig } from "../../config/types.ts";
 import {
   resolveChannelGroupRequireMention,
   resolveChannelGroupToolsPolicy,

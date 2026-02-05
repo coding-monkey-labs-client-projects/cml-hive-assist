@@ -33,37 +33,35 @@ Your instructions here...
 
 ### Full Structure with Metadata
 
-```markdown
+````markdown
 ---
 name: skill-name
 description: "Detailed description of what this skill does. Use when user asks about X or needs Y."
 metadata:
   {
-    "cml-hive-assist": {
-      "emoji": "🔧",
-      "requires": {
-        "bins": ["tool-name"],
-        "env": ["API_KEY"],
-        "config": ["path.to.config"]
+    "cml-hive-assist":
+      {
+        "emoji": "🔧",
+        "requires": { "bins": ["tool-name"], "env": ["API_KEY"], "config": ["path.to.config"] },
+        "os": ["darwin", "linux"],
+        "install":
+          [
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "tool-name",
+              "bins": ["tool-name"],
+              "label": "Install via Homebrew",
+            },
+            {
+              "id": "apt",
+              "kind": "apt",
+              "package": "tool-name",
+              "bins": ["tool-name"],
+              "label": "Install via apt",
+            },
+          ],
       },
-      "os": ["darwin", "linux"],
-      "install": [
-        {
-          "id": "brew",
-          "kind": "brew",
-          "formula": "tool-name",
-          "bins": ["tool-name"],
-          "label": "Install via Homebrew"
-        },
-        {
-          "id": "apt",
-          "kind": "apt",
-          "package": "tool-name",
-          "bins": ["tool-name"],
-          "label": "Install via apt"
-        }
-      ]
-    }
   }
 ---
 
@@ -80,6 +78,7 @@ Brief explanation of the skill's purpose.
 ```bash
 tool-name command --option value
 ```
+````
 
 ### Advanced Usage
 
@@ -94,12 +93,14 @@ tool-name advanced --flag
 ### Example 1: Common Task
 
 When user asks "do X", follow these steps:
+
 1. First, run `tool-name check`
 2. Then, execute `tool-name action`
 
 ## References
 
 For detailed API docs, see [references/api.md](references/api.md)
+
 ```
 
 ## Frontmatter Fields
@@ -128,11 +129,13 @@ For detailed API docs, see [references/api.md](references/api.md)
 For repetitive or complex operations:
 
 ```
+
 scripts/
-├── process_data.py    # Python script
-├── setup.sh           # Bash script
-└── helper.js          # Node.js script
-```
+├── process_data.py # Python script
+├── setup.sh # Bash script
+└── helper.js # Node.js script
+
+````
 
 Reference in SKILL.md:
 ```markdown
@@ -141,7 +144,8 @@ Reference in SKILL.md:
 Run the processor script:
 ```bash
 python scripts/process_data.py --input file.csv
-```
+````
+
 ```
 
 ## References Directory
@@ -149,18 +153,20 @@ python scripts/process_data.py --input file.csv
 For documentation that's too long for SKILL.md:
 
 ```
+
 references/
-├── api.md            # API documentation
-├── schema.md         # Data schemas
-└── examples.md       # Extended examples
-```
+├── api.md # API documentation
+├── schema.md # Data schemas
+└── examples.md # Extended examples
+
+````
 
 Reference in SKILL.md:
 ```markdown
 ## API Details
 
 For complete API reference, see [references/api.md](references/api.md)
-```
+````
 
 ## Assets Directory
 
@@ -174,10 +180,12 @@ assets/
 ```
 
 Reference in SKILL.md:
+
 ```markdown
 ## Creating Reports
 
 Copy the template from `assets/template.html` and fill in:
+
 - Title
 - Content sections
 - Footer

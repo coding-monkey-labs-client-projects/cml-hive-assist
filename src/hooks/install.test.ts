@@ -37,7 +37,7 @@ describe("installHooksFromArchive", () => {
       JSON.stringify({
         name: "@cml-hive-assist/zip-hooks",
         version: "0.0.1",
-        cml-hive-assist: { hooks: ["./hooks/zip-hook"] },
+        "cml-hive-assist": { hooks: ["./hooks/zip-hook"] },
       }),
     );
     zip.file(
@@ -82,7 +82,7 @@ describe("installHooksFromArchive", () => {
       JSON.stringify({
         name: "@cml-hive-assist/tar-hooks",
         version: "0.0.1",
-        cml-hive-assist: { hooks: ["./hooks/tar-hook"] },
+        "cml-hive-assist": { hooks: ["./hooks/tar-hook"] },
       }),
       "utf-8",
     );
@@ -131,7 +131,7 @@ describe("installHooksFromArchive", () => {
       JSON.stringify({
         name: "@evil/..",
         version: "0.0.1",
-        cml-hive-assist: { hooks: ["./hooks/evil-hook"] },
+        "cml-hive-assist": { hooks: ["./hooks/evil-hook"] },
       }),
       "utf-8",
     );
@@ -178,7 +178,7 @@ describe("installHooksFromArchive", () => {
       JSON.stringify({
         name: "@evil/.",
         version: "0.0.1",
-        cml-hive-assist: { hooks: ["./hooks/reserved-hook"] },
+        "cml-hive-assist": { hooks: ["./hooks/reserved-hook"] },
       }),
       "utf-8",
     );

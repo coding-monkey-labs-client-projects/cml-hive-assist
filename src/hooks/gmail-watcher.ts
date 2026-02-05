@@ -129,7 +129,9 @@ export type GmailWatcherStartResult = {
  * Start the Gmail watcher service.
  * Called automatically by the gateway if hooks.gmail is configured.
  */
-export async function startGmailWatcher(cfg: CmlHiveAssistConfig): Promise<GmailWatcherStartResult> {
+export async function startGmailWatcher(
+  cfg: CmlHiveAssistConfig,
+): Promise<GmailWatcherStartResult> {
   // Check if gmail hooks are configured
   if (!cfg.hooks?.enabled) {
     return { started: false, reason: "hooks not enabled" };

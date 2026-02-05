@@ -190,16 +190,16 @@ cml-hive-assist plugins update
 
 These commands can be sent via chat (WhatsApp/Telegram/etc.):
 
-| Command | Action |
-|---------|--------|
-| `/status` | Show session status |
-| `/new` or `/reset` | Reset session |
-| `/compact` | Compact session context |
-| `/think <level>` | Set thinking level |
-| `/verbose on\|off` | Toggle verbose mode |
-| `/usage off\|tokens\|full` | Set usage display |
-| `/restart` | Restart gateway (owner) |
-| `/activation mention\|always` | Group activation |
+| Command                       | Action                  |
+| ----------------------------- | ----------------------- |
+| `/status`                     | Show session status     |
+| `/new` or `/reset`            | Reset session           |
+| `/compact`                    | Compact session context |
+| `/think <level>`              | Set thinking level      |
+| `/verbose on\|off`            | Toggle verbose mode     |
+| `/usage off\|tokens\|full`    | Set usage display       |
+| `/restart`                    | Restart gateway (owner) |
+| `/activation mention\|always` | Group activation        |
 
 ## Development
 

@@ -34,13 +34,12 @@ import {
   saveSessionStore,
   updateSessionStore,
 } from "../config/sessions.ts";
-import { formatErrorMessage } from "./errors.ts";
-import { peekSystemEvents } from "./system-events.ts";
 import { createSubsystemLogger } from "../logging/subsystem.ts";
 import { getQueueSize } from "../process/command-queue.ts";
 import { CommandLane } from "../process/lanes.ts";
 import { normalizeAgentId, toAgentStoreSessionKey } from "../routing/session-key.ts";
 import { defaultRuntime, type RuntimeEnv } from "../runtime.ts";
+import { formatErrorMessage } from "./errors.ts";
 import { emitHeartbeatEvent, resolveIndicatorType } from "./heartbeat-events.ts";
 import { resolveHeartbeatVisibility } from "./heartbeat-visibility.ts";
 import {
@@ -54,6 +53,7 @@ import {
   resolveHeartbeatDeliveryTarget,
   resolveHeartbeatSenderContext,
 } from "./outbound/targets.ts";
+import { peekSystemEvents } from "./system-events.ts";
 
 type HeartbeatDeps = OutboundSendDeps &
   ChannelHeartbeatDeps & {

@@ -359,7 +359,7 @@ export class HiveAssistApp extends LitElement {
 
         <form class="connect-form" @submit=${(e: Event) => {
           e.preventDefault();
-          this.handleConnect();
+          void this.handleConnect();
         }}>
           <div class="form-group">
             <label for="gateway-url">Gateway URL</label>
@@ -368,7 +368,7 @@ export class HiveAssistApp extends LitElement {
               type="text"
               placeholder="http://localhost:18789"
               .value=${this.gatewayUrl}
-              @input=${this.handleGatewayUrlChange}
+              @input=${(e: Event) => this.handleGatewayUrlChange(e)}
             />
           </div>
 

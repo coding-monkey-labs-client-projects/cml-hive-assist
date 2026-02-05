@@ -1,5 +1,5 @@
-import type { CmlHiveAssistConfig } from "./types.ts";
 import type { ModelDefinitionConfig } from "./types.models.ts";
+import type { CmlHiveAssistConfig } from "./types.ts";
 import { DEFAULT_CONTEXT_TOKENS } from "../agents/defaults.ts";
 import { parseModelRef } from "../agents/model-selection.ts";
 import { DEFAULT_AGENT_MAX_CONCURRENT, DEFAULT_SUBAGENT_MAX_CONCURRENT } from "./agent-limits.ts";
@@ -53,7 +53,9 @@ function resolveModelCost(
   };
 }
 
-function resolveAnthropicDefaultAuthMode(cfg: CmlHiveAssistConfig): AnthropicAuthDefaultsMode | null {
+function resolveAnthropicDefaultAuthMode(
+  cfg: CmlHiveAssistConfig,
+): AnthropicAuthDefaultsMode | null {
   const profiles = cfg.auth?.profiles ?? {};
   const anthropicProfiles = Object.entries(profiles).filter(
     ([, profile]) => profile?.provider === "anthropic",

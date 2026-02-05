@@ -20,7 +20,10 @@ function ensureAllowlisted(cfg: CmlHiveAssistConfig, pluginId: string): CmlHiveA
   };
 }
 
-export function enablePluginInConfig(cfg: CmlHiveAssistConfig, pluginId: string): PluginEnableResult {
+export function enablePluginInConfig(
+  cfg: CmlHiveAssistConfig,
+  pluginId: string,
+): PluginEnableResult {
   if (cfg.plugins?.enabled === false) {
     return { config: cfg, enabled: false, reason: "plugins disabled" };
   }

@@ -1,22 +1,6 @@
 import { Type } from "@sinclair/typebox";
 import type { CmlHiveAssistConfig } from "../../config/config.ts";
 import type { AnyAgentTool } from "./common.ts";
-import { resolveAgentDir } from "../agent-scope.ts";
-import {
-  ensureAuthProfileStore,
-  resolveAuthProfileDisplayLabel,
-  resolveAuthProfileOrder,
-} from "../auth-profiles.ts";
-import { getCustomProviderApiKey, resolveEnvApiKey } from "../model-auth.ts";
-import { loadModelCatalog } from "../model-catalog.ts";
-import {
-  buildAllowedModelSet,
-  buildModelAliasIndex,
-  modelKey,
-  normalizeProviderId,
-  resolveDefaultModelForAgent,
-  resolveModelRefFromString,
-} from "../model-selection.ts";
 import { normalizeGroupActivation } from "../../auto-reply/group-activation.ts";
 import { getFollowupQueueDepth, resolveQueueSettings } from "../../auto-reply/reply/queue.ts";
 import { buildStatusMessage } from "../../auto-reply/status.ts";
@@ -39,7 +23,23 @@ import {
   resolveAgentIdFromSessionKey,
 } from "../../routing/session-key.ts";
 import { applyModelOverrideToSessionEntry } from "../../sessions/model-overrides.ts";
+import { resolveAgentDir } from "../agent-scope.ts";
+import {
+  ensureAuthProfileStore,
+  resolveAuthProfileDisplayLabel,
+  resolveAuthProfileOrder,
+} from "../auth-profiles.ts";
 import { formatUserTime, resolveUserTimeFormat, resolveUserTimezone } from "../date-time.ts";
+import { getCustomProviderApiKey, resolveEnvApiKey } from "../model-auth.ts";
+import { loadModelCatalog } from "../model-catalog.ts";
+import {
+  buildAllowedModelSet,
+  buildModelAliasIndex,
+  modelKey,
+  normalizeProviderId,
+  resolveDefaultModelForAgent,
+  resolveModelRefFromString,
+} from "../model-selection.ts";
 import { readStringParam } from "./common.ts";
 import {
   shouldResolveSessionIdInput,

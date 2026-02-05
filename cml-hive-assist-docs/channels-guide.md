@@ -7,6 +7,7 @@ CML Hive Assist supports multiple messaging channels, each with its own integrat
 ## Primary Channels
 
 ### WhatsApp
+
 - **Integration**: Baileys web library (no official API needed)
 - **Config Key**: `channels.whatsapp`
 - **Setup**: `cml-hive-assist channels login` to scan QR code
@@ -14,16 +15,17 @@ CML Hive Assist supports multiple messaging channels, each with its own integrat
 
 ```json5
 {
-  "channels": {
-    "whatsapp": {
-      "allowFrom": ["+1234567890"],
-      "groups": ["*"]  // or specific group IDs
-    }
-  }
+  channels: {
+    whatsapp: {
+      allowFrom: ["+1234567890"],
+      groups: ["*"], // or specific group IDs
+    },
+  },
 }
 ```
 
 ### Telegram
+
 - **Integration**: grammY framework
 - **Config Key**: `channels.telegram`
 - **Setup**: Set `TELEGRAM_BOT_TOKEN` or config
@@ -31,24 +33,26 @@ CML Hive Assist supports multiple messaging channels, each with its own integrat
 
 ```json5
 {
-  "channels": {
-    "telegram": {
-      "botToken": "123456:ABCDEF",
-      "groups": {
-        "*": { "requireMention": true }
-      }
-    }
-  }
+  channels: {
+    telegram: {
+      botToken: "123456:ABCDEF",
+      groups: {
+        "*": { requireMention: true },
+      },
+    },
+  },
 }
 ```
 
 ### Slack
+
 - **Integration**: Bolt framework
 - **Config Key**: `channels.slack`
 - **Setup**: Set `SLACK_BOT_TOKEN` + `SLACK_APP_TOKEN`
 - **Features**: DM, Channels, Threads
 
 ### Discord
+
 - **Integration**: discord.js
 - **Config Key**: `channels.discord`
 - **Setup**: Set `DISCORD_BOT_TOKEN`
@@ -56,36 +60,40 @@ CML Hive Assist supports multiple messaging channels, each with its own integrat
 
 ```json5
 {
-  "channels": {
-    "discord": {
-      "token": "your-bot-token",
-      "dm": {
-        "policy": "pairing",
-        "allowFrom": []
-      }
-    }
-  }
+  channels: {
+    discord: {
+      token: "your-bot-token",
+      dm: {
+        policy: "pairing",
+        allowFrom: [],
+      },
+    },
+  },
 }
 ```
 
 ### Signal
+
 - **Integration**: signal-cli
 - **Config Key**: `channels.signal`
 - **Setup**: Install signal-cli, configure account
 - **Features**: DM, Groups
 
 ### iMessage (macOS only)
+
 - **Integration**: imsg native bridge
 - **Config Key**: `channels.imessage`
 - **Setup**: Messages app must be signed in
 - **Features**: DM, Groups
 
 ### Google Chat
+
 - **Integration**: Chat API
 - **Config Key**: `channels.googlechat`
 - **Setup**: Service account credentials
 
 ### Microsoft Teams
+
 - **Integration**: Bot Framework
 - **Config Key**: `msteams`
 - **Setup**: Azure Bot registration
@@ -94,23 +102,23 @@ CML Hive Assist supports multiple messaging channels, each with its own integrat
 
 These require installing plugins from the `extensions/` directory:
 
-| Channel | Plugin | Notes |
-|---------|--------|-------|
-| Matrix | `extensions/matrix/` | End-to-end encryption support |
-| BlueBubbles | `extensions/bluebubbles/` | Alternative iMessage |
-| Zalo | `extensions/zalo/` | Vietnamese messaging |
-| Zalo Personal | `extensions/zalo-user/` | Personal Zalo account |
-| LINE | `src/line/` | Built-in |
+| Channel       | Plugin                    | Notes                         |
+| ------------- | ------------------------- | ----------------------------- |
+| Matrix        | `extensions/matrix/`      | End-to-end encryption support |
+| BlueBubbles   | `extensions/bluebubbles/` | Alternative iMessage          |
+| Zalo          | `extensions/zalo/`        | Vietnamese messaging          |
+| Zalo Personal | `extensions/zalo-user/`   | Personal Zalo account         |
+| LINE          | `src/line/`               | Built-in                      |
 
 ## Security & Access Control
 
 ### DM Policy Options
 
-| Policy | Behavior |
-|--------|----------|
+| Policy    | Behavior                                   |
+| --------- | ------------------------------------------ |
 | `pairing` | Unknown senders get pairing code (default) |
-| `open` | Accept all DMs (requires explicit opt-in) |
-| `closed` | Reject all unknown DMs |
+| `open`    | Accept all DMs (requires explicit opt-in)  |
+| `closed`  | Reject all unknown DMs                     |
 
 ### Allowlists
 
@@ -128,25 +136,25 @@ These require installing plugins from the `extensions/` directory:
 
 ### Activation Modes
 
-| Mode | Behavior |
-|------|----------|
+| Mode      | Behavior                    |
+| --------- | --------------------------- |
 | `mention` | Only respond when mentioned |
-| `always` | Respond to all messages |
+| `always`  | Respond to all messages     |
 
 ### Configuration
 
 ```json5
 {
-  "channels": {
-    "telegram": {
-      "groups": {
+  channels: {
+    telegram: {
+      groups: {
         "group-id": {
-          "requireMention": true,
-          "activation": "mention"
-        }
-      }
-    }
-  }
+          requireMention: true,
+          activation: "mention",
+        },
+      },
+    },
+  },
 }
 ```
 

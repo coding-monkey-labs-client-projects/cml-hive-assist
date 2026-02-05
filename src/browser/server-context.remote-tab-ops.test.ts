@@ -37,7 +37,7 @@ function makeState(
           cdpPort: 443,
           color: "#00AA00",
         },
-        cml-hive-assist: { cdpPort: 18800, color: "#FF4500" },
+        "cml-hive-assist": { cdpPort: 18800, color: "#FF4500" },
       },
     },
     profiles: new Map(),

@@ -401,7 +401,10 @@ function canonicalizeSpawnedByForAgent(agentId: string, spawnedBy?: string): str
   return `agent:${normalizeAgentId(agentId)}:${raw}`;
 }
 
-export function resolveGatewaySessionStoreTarget(params: { cfg: CmlHiveAssistConfig; key: string }): {
+export function resolveGatewaySessionStoreTarget(params: {
+  cfg: CmlHiveAssistConfig;
+  key: string;
+}): {
   agentId: string;
   storePath: string;
   canonicalKey: string;

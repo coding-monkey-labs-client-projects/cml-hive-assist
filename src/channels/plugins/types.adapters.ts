@@ -223,7 +223,10 @@ export type ChannelHeartbeatAdapter = {
     accountId?: string | null;
     deps?: ChannelHeartbeatDeps;
   }) => Promise<{ ok: boolean; reason: string }>;
-  resolveRecipients?: (params: { cfg: CmlHiveAssistConfig; opts?: { to?: string; all?: boolean } }) => {
+  resolveRecipients?: (params: {
+    cfg: CmlHiveAssistConfig;
+    opts?: { to?: string; all?: boolean };
+  }) => {
     recipients: string[];
     source: string;
   };

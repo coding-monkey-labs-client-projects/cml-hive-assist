@@ -7,7 +7,9 @@ export type CmlHiveAssistVersion = {
 
 const VERSION_RE = /^v?(\d+)\.(\d+)\.(\d+)(?:-(\d+))?/;
 
-export function parseCmlHiveAssistVersion(raw: string | null | undefined): CmlHiveAssistVersion | null {
+export function parseCmlHiveAssistVersion(
+  raw: string | null | undefined,
+): CmlHiveAssistVersion | null {
   if (!raw) {
     return null;
   }

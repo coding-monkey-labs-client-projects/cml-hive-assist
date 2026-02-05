@@ -11,7 +11,9 @@ export function mapThinkingLevel(level?: ThinkLevel): ThinkingLevel {
   return level;
 }
 
-export function resolveExecToolDefaults(config?: CmlHiveAssistConfig): ExecToolDefaults | undefined {
+export function resolveExecToolDefaults(
+  config?: CmlHiveAssistConfig,
+): ExecToolDefaults | undefined {
   const tools = config?.tools;
   if (!tools?.exec) {
     return undefined;

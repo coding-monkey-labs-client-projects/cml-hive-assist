@@ -163,7 +163,9 @@ describe("inferBasePathFromPathname", () => {
 
   it("infers base path from nested paths", () => {
     expect(inferBasePathFromPathname("/ui/chat")).toBe("/ui");
-    expect(inferBasePathFromPathname("/apps/cml-hive-assist/sessions")).toBe("/apps/cml-hive-assist");
+    expect(inferBasePathFromPathname("/apps/cml-hive-assist/sessions")).toBe(
+      "/apps/cml-hive-assist",
+    );
   });
 
   it("handles index.html suffix", () => {

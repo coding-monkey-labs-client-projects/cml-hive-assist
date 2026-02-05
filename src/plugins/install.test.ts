@@ -102,7 +102,7 @@ describe("installPluginFromArchive", () => {
       JSON.stringify({
         name: "@cml-hive-assist/voice-call",
         version: "0.0.1",
-        cml-hive-assist: { extensions: ["./dist/index.js"] },
+        "cml-hive-assist": { extensions: ["./dist/index.js"] },
       }),
       "utf-8",
     );
@@ -140,7 +140,7 @@ describe("installPluginFromArchive", () => {
       JSON.stringify({
         name: "@cml-hive-assist/voice-call",
         version: "0.0.1",
-        cml-hive-assist: { extensions: ["./dist/index.js"] },
+        "cml-hive-assist": { extensions: ["./dist/index.js"] },
       }),
       "utf-8",
     );
@@ -182,7 +182,7 @@ describe("installPluginFromArchive", () => {
       JSON.stringify({
         name: "@cml-hive-assist/zipper",
         version: "0.0.1",
-        cml-hive-assist: { extensions: ["./dist/index.js"] },
+        "cml-hive-assist": { extensions: ["./dist/index.js"] },
       }),
     );
     zip.file("package/dist/index.js", "export {};");
@@ -216,7 +216,7 @@ describe("installPluginFromArchive", () => {
       JSON.stringify({
         name: "@cml-hive-assist/voice-call",
         version: "0.0.1",
-        cml-hive-assist: { extensions: ["./dist/index.js"] },
+        "cml-hive-assist": { extensions: ["./dist/index.js"] },
       }),
       "utf-8",
     );
@@ -234,7 +234,7 @@ describe("installPluginFromArchive", () => {
         JSON.stringify({
           name: "@cml-hive-assist/voice-call",
           version: "0.0.2",
-          cml-hive-assist: { extensions: ["./dist/index.js"] },
+          "cml-hive-assist": { extensions: ["./dist/index.js"] },
         }),
         "utf-8",
       );
@@ -278,7 +278,7 @@ describe("installPluginFromArchive", () => {
       JSON.stringify({
         name: "@evil/..",
         version: "0.0.1",
-        cml-hive-assist: { extensions: ["./dist/index.js"] },
+        "cml-hive-assist": { extensions: ["./dist/index.js"] },
       }),
       "utf-8",
     );
@@ -314,7 +314,7 @@ describe("installPluginFromArchive", () => {
       JSON.stringify({
         name: "@evil/.",
         version: "0.0.1",
-        cml-hive-assist: { extensions: ["./dist/index.js"] },
+        "cml-hive-assist": { extensions: ["./dist/index.js"] },
       }),
       "utf-8",
     );

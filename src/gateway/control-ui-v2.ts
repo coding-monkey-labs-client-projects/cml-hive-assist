@@ -133,7 +133,7 @@ function isSafeRelativePath(relPath: string) {
 export function handleControlUiV2HttpRequest(
   req: IncomingMessage,
   res: ServerResponse,
-  opts?: ControlUiV2RequestOptions,
+  _opts?: ControlUiV2RequestOptions,
 ): boolean {
   const urlRaw = req.url;
   if (!urlRaw) {

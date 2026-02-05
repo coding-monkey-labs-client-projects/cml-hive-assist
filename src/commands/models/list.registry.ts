@@ -29,7 +29,11 @@ const isLocalBaseUrl = (baseUrl: string) => {
   }
 };
 
-const hasAuthForProvider = (provider: string, cfg: CmlHiveAssistConfig, authStore: AuthProfileStore) => {
+const hasAuthForProvider = (
+  provider: string,
+  cfg: CmlHiveAssistConfig,
+  authStore: AuthProfileStore,
+) => {
   if (listProfilesForProvider(authStore, provider).length > 0) {
     return true;
   }

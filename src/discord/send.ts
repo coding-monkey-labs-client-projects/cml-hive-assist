@@ -1,217 +1,501 @@
 // Stub file - Discord channel removed
 
-export function sendMessageDiscord(): Promise<{ ok: false; error: string }> {
-  return Promise.resolve({ ok: false, error: "Discord channel removed" });
+type AccountOpts = {
+  accountId?: string;
+  content?: string;
+  mediaUrl?: string;
+  replyTo?: string;
+  embeds?: unknown[];
+  limit?: number;
+  verbose?: boolean;
+  token?: string;
+};
+
+export function sendMessageDiscord(
+  _to?: string | null,
+  _content?: string | null,
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string; messageId: string }> {
+  return Promise.resolve({ ok: false, error: "Discord channel removed", messageId: "" });
 }
 
-export function sendPollDiscord(): Promise<{ ok: false; error: string }> {
-  return Promise.resolve({ ok: false, error: "Discord channel removed" });
+export function sendPollDiscord(
+  _to?: string | null,
+  _poll?: {
+    question: string;
+    options: string[];
+    maxSelections?: number;
+    durationHours?: number;
+  },
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string; messageId: string }> {
+  return Promise.resolve({ ok: false, error: "Discord channel removed", messageId: "" });
 }
 
-export function fetchChannelPermissionsDiscord(): Promise<null> {
+export type DiscordChannelPermissions = {
+  channelId: string;
+  guildId?: string;
+  isDm: boolean;
+  channelType: number;
+  permissions: string[];
+  raw?: string;
+};
+
+export function fetchChannelPermissionsDiscord(
+  _channelId?: string | null,
+  _opts?: AccountOpts,
+): Promise<DiscordChannelPermissions | null> {
   return Promise.resolve(null);
 }
 
-export function banMemberDiscord(): Promise<{ ok: false; error: string }> {
+export function banMemberDiscord(
+  _params?: {
+    guildId?: string;
+    userId?: string;
+    reason?: string;
+    deleteMessageDays?: number;
+  },
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function kickMemberDiscord(): Promise<{ ok: false; error: string }> {
+export function kickMemberDiscord(
+  _params?: {
+    guildId?: string;
+    userId?: string;
+    reason?: string;
+  },
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function timeoutMemberDiscord(): Promise<{ ok: false; error: string }> {
+export function timeoutMemberDiscord(
+  _params?: {
+    guildId?: string;
+    userId?: string;
+    durationMinutes?: number;
+    until?: string;
+    reason?: string;
+  },
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function sendTypingDiscord(): Promise<void> {
+export function sendTypingDiscord(_channelId?: string | null, _opts?: AccountOpts): Promise<void> {
   return Promise.resolve();
 }
 
-export function addReactionDiscord(): Promise<{ ok: false; error: string }> {
+export function addReactionDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _emoji?: string | null,
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function removeReactionDiscord(): Promise<{ ok: false; error: string }> {
+export function removeReactionDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _emoji?: string | null,
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function deleteMessageDiscord(): Promise<{ ok: false; error: string }> {
+export function deleteMessageDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function editMessageDiscord(): Promise<{ ok: false; error: string }> {
+export function editMessageDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _content?: { content: string } | null,
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function pinMessageDiscord(): Promise<{ ok: false; error: string }> {
+export function pinMessageDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function unpinMessageDiscord(): Promise<{ ok: false; error: string }> {
+export function unpinMessageDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function fetchMessageDiscord(): Promise<null> {
+export function fetchMessageDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function fetchChannelInfoDiscord(): Promise<null> {
+export function fetchChannelInfoDiscord(
+  _channelId?: string | null,
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function listChannelMembersDiscord(): Promise<never[]> {
+export function listChannelMembersDiscord(
+  _channelId?: string | null,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function listChannelMessagesDiscord(): Promise<never[]> {
+export function listChannelMessagesDiscord(
+  _channelId?: string | null,
+  _limit?: number,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function searchChannelMessagesDiscord(): Promise<never[]> {
+export function searchChannelMessagesDiscord(
+  _channelId?: string | null,
+  _query?: string | null,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function fetchGuildInfoDiscord(): Promise<null> {
+export function fetchGuildInfoDiscord(
+  _guildId?: string | null,
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function listGuildChannelsDiscord(): Promise<never[]> {
+export function listGuildChannelsDiscord(
+  _guildId?: string | null,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function listGuildMembersDiscord(): Promise<never[]> {
+export function listGuildMembersDiscord(
+  _guildId?: string | null,
+  _limit?: number,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function listGuildRolesDiscord(): Promise<never[]> {
+export function listGuildRolesDiscord(
+  _guildId?: string | null,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function fetchUserInfoDiscord(): Promise<null> {
+export function fetchUserInfoDiscord(_userId?: string | null, _opts?: AccountOpts): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function createThreadDiscord(): Promise<{ ok: false; error: string }> {
+export function createThreadDiscord(
+  _channelId?: string | null,
+  _params?: {
+    name?: string;
+    messageId?: string;
+    autoArchiveMinutes?: number;
+  },
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function fetchReactionsDiscord(): Promise<never[]> {
+export function fetchReactionsDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _opts?: AccountOpts & { limit?: number },
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function sendStickerDiscord(): Promise<void> {
+export function sendStickerDiscord(
+  _to?: string | null,
+  _stickerIds?: string[],
+  _opts?: AccountOpts,
+): Promise<void> {
   return Promise.resolve();
 }
 
-export function reactMessageDiscord(): Promise<void> {
+export function reactMessageDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _emoji?: string | null,
+  _opts?: AccountOpts,
+): Promise<void> {
   return Promise.resolve();
 }
 
-export function removeOwnReactionsDiscord(): Promise<{ removed: string[] }> {
+export function removeOwnReactionsDiscord(
+  _channelId?: string | null,
+  _messageId?: string | null,
+  _opts?: AccountOpts,
+): Promise<{ removed: string[] }> {
   return Promise.resolve({ removed: [] });
 }
 
-export function readMessagesDiscord(): Promise<never[]> {
+export function readMessagesDiscord(
+  _channelId?: string | null,
+  _query?: {
+    limit?: number;
+    before?: string | null;
+    after?: string | null;
+    around?: string | null;
+  },
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function listThreadsDiscord(): Promise<never[]> {
+export function listThreadsDiscord(
+  _params?:
+    | string
+    | null
+    | {
+        guildId?: string;
+        channelId?: string;
+        includeArchived?: boolean;
+        before?: string;
+        limit?: number;
+      },
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function listPinsDiscord(): Promise<never[]> {
+export function listPinsDiscord(_channelId?: string | null, _opts?: AccountOpts): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function searchMessagesDiscord(): Promise<{ messages: never[] }> {
+export function searchMessagesDiscord(
+  _params?:
+    | string
+    | null
+    | {
+        guildId?: string;
+        content?: string;
+        channelIds?: string[];
+        authorIds?: string[];
+        limit?: number;
+      },
+  _opts?: AccountOpts,
+): Promise<{ messages: never[] }> {
   return Promise.resolve({ messages: [] });
 }
 
-export function listGuildEmojisDiscord(): Promise<never[]> {
+export function listGuildEmojisDiscord(
+  _guildId?: string | null,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function uploadEmojiDiscord(): Promise<{ ok: false; error: string }> {
+export function uploadEmojiDiscord(
+  _params?: {
+    guildId?: string;
+    name?: string;
+    mediaUrl?: string;
+    roleIds?: string[];
+  },
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function uploadStickerDiscord(): Promise<{ ok: false; error: string }> {
+export function uploadStickerDiscord(
+  _params?: {
+    guildId?: string;
+    name?: string;
+    description?: string;
+    tags?: string;
+    mediaUrl?: string;
+  },
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function addRoleDiscord(): Promise<void> {
+export function addRoleDiscord(
+  _params?: { guildId?: string; userId?: string; roleId?: string },
+  _opts?: AccountOpts,
+): Promise<void> {
   return Promise.resolve();
 }
 
-export function removeRoleDiscord(): Promise<void> {
+export function removeRoleDiscord(
+  _params?: { guildId?: string; userId?: string; roleId?: string },
+  _opts?: AccountOpts,
+): Promise<void> {
   return Promise.resolve();
 }
 
-export function createChannelDiscord(): Promise<null> {
+export function createChannelDiscord(
+  _params?: {
+    guildId?: string;
+    name?: string;
+    type?: number;
+    parentId?: string;
+    topic?: string;
+    position?: number;
+    nsfw?: boolean;
+  },
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function editChannelDiscord(): Promise<null> {
+export function editChannelDiscord(
+  _params?: {
+    channelId?: string;
+    name?: string;
+    topic?: string;
+    position?: number;
+    parentId?: string | null;
+    nsfw?: boolean;
+    rateLimitPerUser?: number;
+  },
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function deleteChannelDiscord(): Promise<void> {
+export function deleteChannelDiscord(
+  _channelId?: string | null,
+  _opts?: AccountOpts,
+): Promise<void> {
   return Promise.resolve();
 }
 
-export function moveChannelDiscord(): Promise<void> {
+export function moveChannelDiscord(
+  _params?: {
+    guildId?: string;
+    channelId?: string;
+    parentId?: string | null;
+    position?: number;
+  },
+  _opts?: AccountOpts,
+): Promise<void> {
   return Promise.resolve();
 }
 
-export function createCategoryDiscord(): Promise<null> {
+export function createCategoryDiscord(
+  _guildId?: string | null,
+  _name?: string | null,
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function editCategoryDiscord(): Promise<null> {
+export function editCategoryDiscord(
+  _categoryId?: string | null,
+  _name?: string | null,
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function deleteCategoryDiscord(): Promise<void> {
+export function deleteCategoryDiscord(
+  _categoryId?: string | null,
+  _opts?: AccountOpts,
+): Promise<void> {
   return Promise.resolve();
 }
 
-export function setChannelPermissionDiscord(): Promise<void> {
+export function setChannelPermissionDiscord(
+  _params?: {
+    channelId?: string;
+    targetId?: string;
+    targetType?: number;
+    allow?: string;
+    deny?: string;
+  },
+  _opts?: AccountOpts,
+): Promise<void> {
   return Promise.resolve();
 }
 
-export function removeChannelPermissionDiscord(): Promise<void> {
+export function removeChannelPermissionDiscord(
+  _channelId?: string | null,
+  _targetId?: string | null,
+  _opts?: AccountOpts,
+): Promise<void> {
   return Promise.resolve();
 }
 
-export function listGuildStickersDiscord(): Promise<never[]> {
+export function listGuildStickersDiscord(
+  _guildId?: string | null,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function fetchMemberInfoDiscord(): Promise<null> {
+export function fetchMemberInfoDiscord(
+  _guildId?: string | null,
+  _userId?: string | null,
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function fetchRoleInfoDiscord(): Promise<null> {
+export function fetchRoleInfoDiscord(_guildId?: string | null, _opts?: AccountOpts): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function fetchVoiceStatusDiscord(): Promise<null> {
+export function fetchVoiceStatusDiscord(
+  _guildId?: string | null,
+  _userId?: string | null,
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function listGuildEventsDiscord(): Promise<never[]> {
+export function listGuildEventsDiscord(
+  _guildId?: string | null,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }
 
-export function createGuildEventDiscord(): Promise<null> {
+export function createGuildEventDiscord(
+  _guildId?: string | null,
+  _payload?: Record<string, unknown>,
+  _opts?: AccountOpts,
+): Promise<null> {
   return Promise.resolve(null);
 }
 
-export function createScheduledEventDiscord(): Promise<{ ok: false; error: string }> {
+export function createScheduledEventDiscord(
+  _guildId?: string | null,
+  _payload?: Record<string, unknown>,
+  _opts?: AccountOpts,
+): Promise<{ ok: false; error: string }> {
   return Promise.resolve({ ok: false, error: "Discord channel removed" });
 }
 
-export function listScheduledEventsDiscord(): Promise<never[]> {
+export function listScheduledEventsDiscord(
+  _guildId?: string | null,
+  _opts?: AccountOpts,
+): Promise<never[]> {
   return Promise.resolve([]);
 }

@@ -8,6 +8,7 @@
 ## Step 1: Define the Skill Purpose
 
 Before creating, answer:
+
 1. What specific task will this skill help with?
 2. What triggers should activate it?
 3. What tools/commands are involved?
@@ -36,6 +37,7 @@ description: "Helps with X task. Use when user mentions Y or wants to Z."
 ## How to Use
 
 When the user asks about X:
+
 1. First, check the current state with `command --status`
 2. Then, perform the action with `command --do-thing`
 
@@ -53,17 +55,19 @@ name: my-skill
 description: "Helps with X task using the mytool CLI."
 metadata:
   {
-    "cml-hive-assist": {
-      "requires": { "bins": ["mytool"] },
-      "install": [
-        {
-          "id": "brew",
-          "kind": "brew",
-          "formula": "mytool",
-          "label": "Install mytool (Homebrew)"
-        }
-      ]
-    }
+    "cml-hive-assist":
+      {
+        "requires": { "bins": ["mytool"] },
+        "install":
+          [
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "mytool",
+              "label": "Install mytool (Homebrew)",
+            },
+          ],
+      },
   }
 ---
 
@@ -84,6 +88,7 @@ Instructions here...
 ## Step 5: Iterate
 
 Based on testing:
+
 - Clarify ambiguous instructions
 - Add missing edge cases
 - Remove unnecessary text
@@ -98,6 +103,7 @@ mkdir ~/.cml-hive-assist/workspace/skills/my-skill/scripts
 ```
 
 Create `scripts/helper.sh`:
+
 ```bash
 #!/bin/bash
 # Helper script for my-skill
@@ -105,14 +111,18 @@ echo "Processing $1..."
 ```
 
 Reference in SKILL.md:
-```markdown
+
+````markdown
 ## Processing Data
 
 Run the helper script:
+
 ```bash
 bash scripts/helper.sh input-file.txt
 ```
-```
+````
+
+````
 
 ## Adding References (Optional)
 
@@ -120,10 +130,11 @@ For extensive documentation:
 
 ```bash
 mkdir ~/.cml-hive-assist/workspace/skills/my-skill/references
-```
+````
 
 Create `references/detailed-api.md`:
-```markdown
+
+````markdown
 # API Reference
 
 ## Endpoint: /api/v1/action
@@ -131,22 +142,26 @@ Create `references/detailed-api.md`:
 **Method**: POST
 
 **Parameters**:
+
 - `input`: The input data
 - `format`: Output format (json|xml)
 
 **Response**:
+
 ```json
 {
   "status": "success",
   "result": {...}
 }
 ```
-```
+````
+
+````
 
 Reference in SKILL.md:
 ```markdown
 For complete API details, see [references/detailed-api.md](references/detailed-api.md)
-```
+````
 
 ## Using the Init Script (Advanced)
 

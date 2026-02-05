@@ -1,7 +1,7 @@
 // Stub file - LINE channel removed
 
 import type { CmlHiveAssistConfig } from "../config/config.ts";
-import type { ResolvedLineAccount, LineChannelData } from "./types.ts";
+import type { ResolvedLineAccount } from "./types.ts";
 
 export function listLineAccountIds(_cfg: CmlHiveAssistConfig): string[] {
   return [];

@@ -476,7 +476,10 @@ export function applyPrimaryModel(cfg: CmlHiveAssistConfig, model: string): CmlH
   };
 }
 
-export function applyModelAllowlist(cfg: CmlHiveAssistConfig, models: string[]): CmlHiveAssistConfig {
+export function applyModelAllowlist(
+  cfg: CmlHiveAssistConfig,
+  models: string[],
+): CmlHiveAssistConfig {
   const defaults = cfg.agents?.defaults;
   const normalized = normalizeModelKeys(models);
   if (normalized.length === 0) {

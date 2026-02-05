@@ -25,7 +25,7 @@ describe("channel plugin catalog", () => {
         entries: [
           {
             name: "@cml-hive-assist/demo-channel",
-            cml-hive-assist: {
+            "cml-hive-assist": {
               channel: {
                 id: "demo-channel",
                 label: "Demo Channel",

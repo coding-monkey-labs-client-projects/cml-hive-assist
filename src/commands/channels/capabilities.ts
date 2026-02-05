@@ -309,6 +309,15 @@ async function buildDiscordPermissions(params: {
       token,
       accountId: params.account.accountId ?? undefined,
     });
+    if (!perms) {
+      return {
+        target,
+        report: {
+          channelId: target.channelId,
+          error: "Discord channel removed - cannot fetch permissions",
+        },
+      };
+    }
     const missing = REQUIRED_DISCORD_PERMISSIONS.filter(
       (permission) => !perms.permissions.includes(permission),
     );

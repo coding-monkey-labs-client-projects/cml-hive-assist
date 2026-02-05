@@ -136,7 +136,10 @@ name: my-hook
 description: "这个钩子做什么的简短描述"
 homepage: https://docs.cml-hive-assist.ai/hooks#my-hook
 metadata:
-  { "cml-hive-assist": { "emoji": "🔗", "events": ["command:new"], "requires": { "bins": ["node"] } } }
+  {
+    "cml-hive-assist":
+      { "emoji": "🔗", "events": ["command:new"], "requires": { "bins": ["node"] } },
+  }
 ---
 
 # My Hook

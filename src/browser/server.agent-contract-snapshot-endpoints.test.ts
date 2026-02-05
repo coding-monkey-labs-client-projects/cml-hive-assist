@@ -96,7 +96,7 @@ vi.mock("../config/config.js", async (importOriginal) => {
         headless: true,
         defaultProfile: "cml-hive-assist",
         profiles: {
-          cml-hive-assist: { cdpPort: testPort + 1, color: "#FF4500" },
+          "cml-hive-assist": { cdpPort: testPort + 1, color: "#FF4500" },
         },
       },
     }),

@@ -97,7 +97,10 @@ export function getSkillsSnapshotVersion(workspaceDir?: string): number {
   return Math.max(globalVersion, local);
 }
 
-export function ensureSkillsWatcher(params: { workspaceDir: string; config?: CmlHiveAssistConfig }) {
+export function ensureSkillsWatcher(params: {
+  workspaceDir: string;
+  config?: CmlHiveAssistConfig;
+}) {
   const workspaceDir = params.workspaceDir.trim();
   if (!workspaceDir) {
     return;

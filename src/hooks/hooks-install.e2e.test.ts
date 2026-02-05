@@ -63,7 +63,7 @@ describe("hooks install (e2e)", () => {
         {
           name: "@acme/hello-hooks",
           version: "0.0.0",
-          cml-hive-assist: { hooks: ["./hooks/hello-hook"] },
+          "cml-hive-assist": { hooks: ["./hooks/hello-hook"] },
         },
         null,
         2,

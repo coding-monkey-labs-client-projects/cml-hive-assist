@@ -55,7 +55,11 @@ vi.mock("../../agents/model-catalog.js", () => ({
   ]),
 }));
 
-function buildParams(commandBody: string, cfg: CmlHiveAssistConfig, ctxOverrides?: Partial<MsgContext>) {
+function buildParams(
+  commandBody: string,
+  cfg: CmlHiveAssistConfig,
+  ctxOverrides?: Partial<MsgContext>,
+) {
   const ctx = {
     Body: commandBody,
     CommandBody: commandBody,

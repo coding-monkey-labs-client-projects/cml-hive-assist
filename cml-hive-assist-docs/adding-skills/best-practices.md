@@ -38,33 +38,40 @@ description: "PDF utilities."
 
 ```markdown
 # Good
+
 When the user asks to create a file:
+
 1. Verify the directory exists
 2. Create the file with appropriate permissions
 3. Confirm the action
 
 # Bad
+
 The skill can be used to create files. Files might be created
 in various directories depending on user preference.
 ```
 
 ### Do: Provide Concrete Examples
 
-```markdown
+````markdown
 # Good
+
 ## Creating a User
 
 ```bash
 useradd -m -s /bin/bash newuser
 ```
+````
 
 This creates user "newuser" with home directory and bash shell.
 
 # Bad
+
 ## Creating a User
 
 Use the useradd command with appropriate flags.
-```
+
+````
 
 ### Do: Anticipate Edge Cases
 
@@ -86,13 +93,14 @@ Before deleting:
 ## Deleting Files
 
 Use `rm` to delete files.
-```
+````
 
 ## Context Management
 
 ### Do: Keep SKILL.md Under 500 Lines
 
 Split into references if longer:
+
 ```
 my-skill/
 ├── SKILL.md (overview + common tasks)
@@ -103,18 +111,22 @@ my-skill/
 
 ### Do: Use References for Detail
 
-```markdown
+````markdown
 # In SKILL.md
+
 ## API Endpoints
 
 For basic usage, see examples below. For complete API reference,
 see [references/api.md](references/api.md).
 
 ### Quick Start
+
 ```bash
 curl -X GET "https://api.example.com/items"
 ```
-```
+````
+
+````
 
 ### Don't: Duplicate Information
 
@@ -125,7 +137,7 @@ The API returns JSON with fields: id, name, status...
 
 # references/api.md
 The API returns JSON with fields: id, name, status...
-```
+````
 
 ## Gating
 
@@ -163,7 +175,7 @@ metadata:
 metadata:
   cml-hive-assist:
     requires:
-      bins: ["bash", "echo", "cat"]  # These are always present
+      bins: ["bash", "echo", "cat"] # These are always present
 ```
 
 ## Script Best Practices
@@ -221,6 +233,7 @@ import json  # Standard library
 ### Do: Test Trigger Phrases
 
 Try various ways users might invoke your skill:
+
 - "Help me with X"
 - "I need to do X"
 - "Can you X?"
@@ -245,11 +258,11 @@ Try various ways users might invoke your skill:
 
 ## Common Mistakes
 
-| Mistake | Solution |
-|---------|----------|
-| Vague description | Add specific trigger words |
-| Too much detail | Move to references |
-| Missing examples | Add concrete code samples |
-| No error handling | Document failure modes |
-| Assuming knowledge | Explain non-obvious steps |
-| Duplicating docs | Single source of truth |
+| Mistake            | Solution                   |
+| ------------------ | -------------------------- |
+| Vague description  | Add specific trigger words |
+| Too much detail    | Move to references         |
+| Missing examples   | Add concrete code samples  |
+| No error handling  | Document failure modes     |
+| Assuming knowledge | Explain non-obvious steps  |
+| Duplicating docs   | Single source of truth     |

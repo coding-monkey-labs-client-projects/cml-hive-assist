@@ -153,7 +153,7 @@ describe("resolveCmlHiveAssistMetadata", () => {
     const frontmatter = {
       name: "test-hook",
       metadata: JSON.stringify({
-        cml-hive-assist: {
+        "cml-hive-assist": {
           emoji: "🔥",
           events: ["command:new", "command:reset"],
           requires: {
@@ -197,7 +197,7 @@ describe("resolveCmlHiveAssistMetadata", () => {
   it("handles install specs", () => {
     const frontmatter = {
       metadata: JSON.stringify({
-        cml-hive-assist: {
+        "cml-hive-assist": {
           events: ["command"],
           install: [
             { id: "bundled", kind: "bundled", label: "Bundled with CmlHiveAssist" },
@@ -217,7 +217,7 @@ describe("resolveCmlHiveAssistMetadata", () => {
   it("handles os restrictions", () => {
     const frontmatter = {
       metadata: JSON.stringify({
-        cml-hive-assist: {
+        "cml-hive-assist": {
           events: ["command"],
           os: ["darwin", "linux"],
         },

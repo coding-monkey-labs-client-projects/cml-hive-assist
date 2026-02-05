@@ -33,7 +33,9 @@ export {
   syncSkillsToWorkspace,
 } from "./skills/workspace.ts";
 
-export function resolveSkillsInstallPreferences(config?: CmlHiveAssistConfig): SkillsInstallPreferences {
+export function resolveSkillsInstallPreferences(
+  config?: CmlHiveAssistConfig,
+): SkillsInstallPreferences {
   const raw = config?.skills?.install;
   const preferBrew = raw?.preferBrew ?? true;
   const managerRaw = typeof raw?.nodeManager === "string" ? raw.nodeManager.trim() : "";

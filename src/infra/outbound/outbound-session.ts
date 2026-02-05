@@ -431,8 +431,11 @@ function resolveIMessageSession(
   params: ResolveOutboundSessionRouteParams,
 ): OutboundSessionRoute | null {
   const parsed = parseIMessageTarget(params.target);
+  if (!parsed) {
+    return null;
+  }
   if (parsed.kind === "handle") {
-    const handle = normalizeIMessageHandle(parsed.to);
+    const handle = normalizeIMessageHandle(parsed.to ?? "");
     if (!handle) {
       return null;
     }

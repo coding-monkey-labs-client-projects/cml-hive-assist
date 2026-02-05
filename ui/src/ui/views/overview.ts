@@ -63,7 +63,8 @@ export function renderOverview(props: OverviewProps) {
     return html`
       <div class="muted" style="margin-top: 8px">
         Auth failed. Re-copy a tokenized URL with
-        <span class="mono">cml-hive-assist dashboard --no-open</span>, or update the token, then click Connect.
+        <span class="mono">cml-hive-assist dashboard --no-open</span>, or update the token, then click
+        Connect.
         <div style="margin-top: 6px">
           <a
             class="session-link"

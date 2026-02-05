@@ -3,6 +3,7 @@
 ## What is the Gateway?
 
 The Gateway is the **central control plane** for CML Hive Assist. It:
+
 - Manages WebSocket connections
 - Routes messages between channels and agents
 - Handles session lifecycle
@@ -28,17 +29,17 @@ The Gateway reads from `~/.cml-hive-assist/cml-hive-assist.json`:
 
 ```json5
 {
-  "gateway": {
-    "port": 18789,
-    "bind": "loopback",  // or "0.0.0.0"
-    "auth": {
-      "mode": "none",    // or "password", "token"
-      "allowTailscale": true
+  gateway: {
+    port: 18789,
+    bind: "loopback", // or "0.0.0.0"
+    auth: {
+      mode: "none", // or "password", "token"
+      allowTailscale: true,
     },
-    "tailscale": {
-      "mode": "off"      // or "serve", "funnel"
-    }
-  }
+    tailscale: {
+      mode: "off", // or "serve", "funnel"
+    },
+  },
 }
 ```
 
@@ -48,28 +49,29 @@ The Gateway reads from `~/.cml-hive-assist/cml-hive-assist.json`:
 
 Sessions track conversation context:
 
-| Session Type | Use Case |
-|--------------|----------|
-| `main` | Direct 1:1 chats (owner) |
-| `group` | Group conversations |
-| `channel` | Channel-specific sessions |
+| Session Type | Use Case                  |
+| ------------ | ------------------------- |
+| `main`       | Direct 1:1 chats (owner)  |
+| `group`      | Group conversations       |
+| `channel`    | Channel-specific sessions |
 
 ### WebSocket Protocol
 
 The Gateway exposes a WebSocket API at `ws://localhost:18789`:
 
-| Method | Purpose |
-|--------|---------|
-| `sessions.list` | List active sessions |
-| `sessions.get` | Get session details |
+| Method           | Purpose                 |
+| ---------------- | ----------------------- |
+| `sessions.list`  | List active sessions    |
+| `sessions.get`   | Get session details     |
 | `sessions.patch` | Update session settings |
-| `sessions.reset` | Clear session context |
-| `node.list` | List connected nodes |
-| `node.invoke` | Execute on a node |
+| `sessions.reset` | Clear session context   |
+| `node.list`      | List connected nodes    |
+| `node.invoke`    | Execute on a node       |
 
 ### Control UI
 
 Access the web dashboard at `http://localhost:18789`:
+
 - Session monitoring
 - Channel status
 - Tool management
@@ -81,14 +83,14 @@ Access the web dashboard at `http://localhost:18789`:
 
 ```json5
 {
-  "gateway": {
-    "tailscale": {
-      "mode": "serve",      // tailnet-only
+  gateway: {
+    tailscale: {
+      mode: "serve", // tailnet-only
       // or
-      "mode": "funnel",     // public (requires password)
-      "resetOnExit": true
-    }
-  }
+      mode: "funnel", // public (requires password)
+      resetOnExit: true,
+    },
+  },
 }
 ```
 
@@ -104,21 +106,21 @@ ssh -L 18789:localhost:18789 user@remote-host
 
 ### Binding
 
-| Mode | Description |
-|------|-------------|
-| `loopback` | Only localhost (recommended) |
-| `0.0.0.0` | All interfaces (use with auth) |
+| Mode       | Description                    |
+| ---------- | ------------------------------ |
+| `loopback` | Only localhost (recommended)   |
+| `0.0.0.0`  | All interfaces (use with auth) |
 
 ### Authentication
 
 ```json5
 {
-  "gateway": {
-    "auth": {
-      "mode": "password",
-      "password": "your-secret"
-    }
-  }
+  gateway: {
+    auth: {
+      mode: "password",
+      password: "your-secret",
+    },
+  },
 }
 ```
 
@@ -172,11 +174,11 @@ Installs as systemd user service.
 
 ### Common Issues
 
-| Issue | Solution |
-|-------|----------|
-| Port in use | Change port or kill existing process |
-| Connection refused | Check if Gateway is running |
-| Auth failed | Verify password/token |
+| Issue              | Solution                             |
+| ------------------ | ------------------------------------ |
+| Port in use        | Change port or kill existing process |
+| Connection refused | Check if Gateway is running          |
+| Auth failed        | Verify password/token                |
 
 ### Doctor Command
 
@@ -185,6 +187,7 @@ cml-hive-assist doctor
 ```
 
 Checks:
+
 - Gateway connectivity
 - Channel status
 - Configuration issues

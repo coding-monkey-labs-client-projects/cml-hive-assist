@@ -143,7 +143,7 @@ describe("browser config", () => {
   it("does not add the built-in chrome extension profile if the derived relay port is already used", () => {
     const resolved = resolveBrowserConfig({
       profiles: {
-        cml-hive-assist: { cdpPort: 18792, color: "#FF4500" },
+        "cml-hive-assist": { cdpPort: 18792, color: "#FF4500" },
       },
     });
     expect(resolveProfile(resolved, "chrome")).toBe(null);

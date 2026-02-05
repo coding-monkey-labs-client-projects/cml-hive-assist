@@ -14,7 +14,9 @@ describe("shell env fallback", () => {
 
   it("resolves timeout from env with default fallback", () => {
     expect(resolveShellEnvFallbackTimeoutMs({} as NodeJS.ProcessEnv)).toBe(15000);
-    expect(resolveShellEnvFallbackTimeoutMs({ CML_HIVE_ASSIST_SHELL_ENV_TIMEOUT_MS: "42" })).toBe(42);
+    expect(resolveShellEnvFallbackTimeoutMs({ CML_HIVE_ASSIST_SHELL_ENV_TIMEOUT_MS: "42" })).toBe(
+      42,
+    );
     expect(
       resolveShellEnvFallbackTimeoutMs({
         CML_HIVE_ASSIST_SHELL_ENV_TIMEOUT_MS: "nope",

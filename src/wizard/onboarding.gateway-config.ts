@@ -1,5 +1,9 @@
 import type { GatewayAuthChoice } from "../commands/onboard-types.ts";
-import type { GatewayBindMode, GatewayTailscaleMode, CmlHiveAssistConfig } from "../config/config.ts";
+import type {
+  GatewayBindMode,
+  GatewayTailscaleMode,
+  CmlHiveAssistConfig,
+} from "../config/config.ts";
 import type { RuntimeEnv } from "../runtime.ts";
 import type {
   GatewayWizardSettings,
@@ -147,9 +151,11 @@ export async function configureGatewayForOnboarding(
   let tailscaleResetOnExit = flow === "quickstart" ? quickstartGateway.tailscaleResetOnExit : false;
   if (tailscaleMode !== "off" && flow !== "quickstart") {
     await prompter.note(
-      ["Docs:", "https://docs.cml-hive-assist.ai/gateway/tailscale", "https://docs.cml-hive-assist.ai/web"].join(
-        "\n",
-      ),
+      [
+        "Docs:",
+        "https://docs.cml-hive-assist.ai/gateway/tailscale",
+        "https://docs.cml-hive-assist.ai/web",
+      ].join("\n"),
       "Tailscale",
     );
     tailscaleResetOnExit = Boolean(

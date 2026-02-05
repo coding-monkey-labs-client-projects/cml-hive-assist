@@ -144,9 +144,11 @@ export async function promptGatewayConfig(
   let tailscaleResetOnExit = false;
   if (tailscaleMode !== "off") {
     note(
-      ["Docs:", "https://docs.cml-hive-assist.ai/gateway/tailscale", "https://docs.cml-hive-assist.ai/web"].join(
-        "\n",
-      ),
+      [
+        "Docs:",
+        "https://docs.cml-hive-assist.ai/gateway/tailscale",
+        "https://docs.cml-hive-assist.ai/web",
+      ].join("\n"),
       "Tailscale",
     );
     tailscaleResetOnExit = Boolean(

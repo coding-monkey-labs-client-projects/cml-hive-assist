@@ -86,7 +86,9 @@ export async function ensureCmlHiveAssistModelsJson(
   agentDirOverride?: string,
 ): Promise<{ agentDir: string; wrote: boolean }> {
   const cfg = config ?? loadConfig();
-  const agentDir = agentDirOverride?.trim() ? agentDirOverride.trim() : resolveCmlHiveAssistAgentDir();
+  const agentDir = agentDirOverride?.trim()
+    ? agentDirOverride.trim()
+    : resolveCmlHiveAssistAgentDir();
 
   const explicitProviders = cfg.models?.providers ?? {};
   const implicitProviders = await resolveImplicitProviders({ agentDir });

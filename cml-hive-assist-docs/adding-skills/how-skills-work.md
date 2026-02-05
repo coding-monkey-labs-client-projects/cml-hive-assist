@@ -5,16 +5,19 @@
 Skills use **progressive disclosure** to manage context efficiently:
 
 ### Level 1: Metadata (Always in Context)
+
 - **What**: `name` + `description` from YAML frontmatter
 - **Size**: ~100 words per skill
 - **Purpose**: Helps AI decide when to activate the skill
 
 ### Level 2: SKILL.md Body (Loaded on Trigger)
+
 - **What**: Full markdown instructions
 - **Size**: Target <5,000 words
 - **Purpose**: Detailed guidance for executing tasks
 
 ### Level 3: Bundled Resources (On Demand)
+
 - **What**: Scripts, references, assets
 - **Size**: Unlimited (loaded selectively)
 - **Purpose**: Supporting materials
@@ -59,6 +62,7 @@ description: "Interact with GitHub using the `gh` CLI. Use for issues, PRs, CI r
 ```
 
 Why it works:
+
 - Mentions specific tool (`gh`)
 - Lists concrete use cases (issues, PRs, CI)
 - Implies when to trigger
@@ -70,6 +74,7 @@ description: "A helpful skill."
 ```
 
 Why it fails:
+
 - No specific triggers
 - Too vague
 - AI can't determine when to use it
@@ -77,6 +82,7 @@ Why it fails:
 ## Context Window Management
 
 The context window is shared across:
+
 - System prompt
 - Conversation history
 - All skill metadata
@@ -86,12 +92,14 @@ The context window is shared across:
 ### Why Brevity Matters
 
 Every skill description consumes tokens:
+
 - 53 bundled skills × ~100 words = 5,300+ words always present
 - Your custom skills add to this
 
 ### The "Do I Need This?" Test
 
 For each line in your skill, ask:
+
 - Does the AI not already know this?
 - Is this essential for correct behavior?
 - Would removal cause failures?
@@ -101,6 +109,7 @@ For each line in your skill, ask:
 Skills can be conditionally available:
 
 ### Require CLI Tools
+
 ```yaml
 metadata:
   cml-hive-assist:
@@ -111,6 +120,7 @@ metadata:
 Skill only activates if `gh` and `jq` are installed.
 
 ### Require Environment Variables
+
 ```yaml
 metadata:
   cml-hive-assist:
@@ -119,17 +129,19 @@ metadata:
 ```
 
 ### Require OS
+
 ```yaml
 metadata:
   cml-hive-assist:
-    os: ["darwin"]  # macOS only
+    os: ["darwin"] # macOS only
 ```
 
 ### Always Active
+
 ```yaml
 metadata:
   cml-hive-assist:
-    always: true  # Skip all gates
+    always: true # Skip all gates
 ```
 
 ## Skill Precedence

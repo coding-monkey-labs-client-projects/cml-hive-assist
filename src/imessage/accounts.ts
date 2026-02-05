@@ -1,12 +1,11 @@
 // Stub file - iMessage channel removed
 
 import type { CmlHiveAssistConfig } from "../config/config.ts";
+import type { IMessageAccountConfig } from "../config/types.imessage.ts";
 
 export type ResolvedIMessageAccount = {
   accountId: string;
-  config: {
-    allowFrom?: Array<string | number>;
-  };
+  config: IMessageAccountConfig;
 };
 
 export function listIMessageAccountIds(_cfg: CmlHiveAssistConfig): string[] {

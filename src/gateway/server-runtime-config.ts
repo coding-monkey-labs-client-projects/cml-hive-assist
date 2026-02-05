@@ -77,7 +77,8 @@ export async function resolveGatewayRuntimeConfig(params: {
     (authMode === "token" && hasToken) || (authMode === "password" && hasPassword);
   const hooksConfig = resolveHooksConfig(params.cfg);
   const canvasHostEnabled =
-    process.env.CML_HIVE_ASSIST_SKIP_CANVAS_HOST !== "1" && params.cfg.canvasHost?.enabled !== false;
+    process.env.CML_HIVE_ASSIST_SKIP_CANVAS_HOST !== "1" &&
+    params.cfg.canvasHost?.enabled !== false;
 
   assertGatewayAuthConfigured(resolvedAuth);
   if (tailscaleMode === "funnel" && authMode !== "password") {

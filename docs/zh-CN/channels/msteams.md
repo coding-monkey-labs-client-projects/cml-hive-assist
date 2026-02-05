@@ -160,14 +160,14 @@ cml-hive-assist plugins install ./extensions/msteams
 1. 前往[创建 Azure Bot](https://portal.azure.com/#create/Microsoft.AzureBot)
 2. 填写 **Basics** 标签页：
 
-   | 字段               | 值                                                  |
-   | ------------------ | --------------------------------------------------- |
+   | 字段               | 值                                                         |
+   | ------------------ | ---------------------------------------------------------- |
    | **Bot handle**     | 你的机器人名称，例如 `cml-hive-assist-msteams`（必须唯一） |
-   | **Subscription**   | 选择你的 Azure 订阅                                 |
-   | **Resource group** | 新建或使用现有的                                    |
-   | **Pricing tier**   | **Free** 用于开发/测试                              |
-   | **Type of App**    | **Single Tenant**（推荐 - 见下方说明）              |
-   | **Creation type**  | **Create new Microsoft App ID**                     |
+   | **Subscription**   | 选择你的 Azure 订阅                                        |
+   | **Resource group** | 新建或使用现有的                                           |
+   | **Pricing tier**   | **Free** 用于开发/测试                                     |
+   | **Type of App**    | **Single Tenant**（推荐 - 见下方说明）                     |
+   | **Creation type**  | **Create new Microsoft App ID**                            |
 
 > **弃用通知：** 2025-07-31 之后已弃用创建新的多租户机器人。新机器人请使用 **Single Tenant**。
 

@@ -145,7 +145,10 @@ function stampConfigVersion(cfg: CmlHiveAssistConfig): CmlHiveAssistConfig {
   };
 }
 
-function warnIfConfigFromFuture(cfg: CmlHiveAssistConfig, logger: Pick<typeof console, "warn">): void {
+function warnIfConfigFromFuture(
+  cfg: CmlHiveAssistConfig,
+  logger: Pick<typeof console, "warn">,
+): void {
   const touched = cfg.meta?.lastTouchedVersion;
   if (!touched) {
     return;
@@ -245,10 +248,13 @@ export function createConfigIO(overrides: ConfigIoDeps = {}) {
       if (typeof resolvedConfig !== "object" || resolvedConfig === null) {
         return {};
       }
-      const preValidationDuplicates = findDuplicateAgentDirs(resolvedConfig as CmlHiveAssistConfig, {
-        env: deps.env,
-        homedir: deps.homedir,
-      });
+      const preValidationDuplicates = findDuplicateAgentDirs(
+        resolvedConfig as CmlHiveAssistConfig,
+        {
+          env: deps.env,
+          homedir: deps.homedir,
+        },
+      );
       if (preValidationDuplicates.length > 0) {
         throw new DuplicateAgentDirError(preValidationDuplicates);
       }

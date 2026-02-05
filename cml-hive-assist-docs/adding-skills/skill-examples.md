@@ -5,10 +5,12 @@ Real-world examples of skills you can create.
 ## Example 1: Simple CLI Wrapper
 
 ### Use Case
+
 Interact with a weather API via CLI
 
 ### SKILL.md
-```markdown
+
+````markdown
 ---
 name: weather-cli
 description: "Get weather information using the wttr.in service. Use when user asks about weather, forecast, or temperature."
@@ -19,13 +21,16 @@ description: "Get weather information using the wttr.in service. Use when user a
 ## Quick Weather
 
 Get current weather for a city:
+
 ```bash
 curl -s "wttr.in/CityName?format=3"
 ```
+````
 
 ## Detailed Forecast
 
 Get 3-day forecast:
+
 ```bash
 curl -s "wttr.in/CityName"
 ```
@@ -33,6 +38,7 @@ curl -s "wttr.in/CityName"
 ## Weather by Location
 
 For specific coordinates:
+
 ```bash
 curl -s "wttr.in/40.7,-74.0"
 ```
@@ -41,7 +47,8 @@ curl -s "wttr.in/40.7,-74.0"
 
 - "What's the weather in Tokyo?" → `curl -s "wttr.in/Tokyo?format=3"`
 - "Show me the forecast for Paris" → `curl -s "wttr.in/Paris"`
-```
+
+````
 
 ---
 
@@ -71,11 +78,12 @@ Tasks live in `TODO.md` at project root:
 
 ## Done
 - [x] Completed task
-```
+````
 
 ## Adding Tasks
 
 When user wants to add a task:
+
 1. Read existing `TODO.md`
 2. Add new item under "In Progress"
 3. Use format: `- [ ] Description @user #priority`
@@ -83,6 +91,7 @@ When user wants to add a task:
 ## Completing Tasks
 
 When user completes a task:
+
 1. Find the task in "In Progress"
 2. Change `[ ]` to `[x]`
 3. Move to "Done" section
@@ -93,7 +102,8 @@ When user completes a task:
 - `#high` - Do today
 - `#medium` - Do this week
 - `#low` - Do when possible
-```
+
+````
 
 ---
 
@@ -122,7 +132,7 @@ metadata:
 All requests need the API key header:
 ```bash
 -H "Authorization: Bearer $MY_API_KEY"
-```
+````
 
 ## List Records
 
@@ -151,10 +161,12 @@ curl -s -X POST \
 ## Common Tasks
 
 ### Find by name
+
 ```bash
 curl -s -H "Authorization: Bearer $MY_API_KEY" \
   "https://api.example.com/v1/records?name=search-term"
 ```
+
 ```
 
 ---
@@ -166,12 +178,14 @@ Complex workflow with detailed documentation
 
 ### Structure
 ```
+
 database-admin/
 ├── SKILL.md
 └── references/
-    ├── queries.md
-    └── maintenance.md
-```
+├── queries.md
+└── maintenance.md
+
+````
 
 ### SKILL.md
 ```markdown
@@ -193,9 +207,10 @@ metadata:
 ### Check connection
 ```bash
 psql -h localhost -U user -d database -c "SELECT 1"
-```
+````
 
 ### List tables
+
 ```bash
 psql -h localhost -U user -d database -c "\dt"
 ```
@@ -204,7 +219,8 @@ psql -h localhost -U user -d database -c "\dt"
 
 - **Common queries**: See [references/queries.md](references/queries.md)
 - **Maintenance tasks**: See [references/maintenance.md](references/maintenance.md)
-```
+
+````
 
 ### references/queries.md
 ```markdown
@@ -215,9 +231,10 @@ psql -h localhost -U user -d database -c "\dt"
 ### List users
 ```sql
 SELECT usename FROM pg_user;
-```
+````
 
 ### Create user
+
 ```sql
 CREATE USER newuser WITH PASSWORD 'password';
 ```
@@ -225,14 +242,17 @@ CREATE USER newuser WITH PASSWORD 'password';
 ## Table Operations
 
 ### Table size
+
 ```sql
 SELECT pg_size_pretty(pg_relation_size('table_name'));
 ```
 
 ### Row counts
+
 ```sql
 SELECT reltuples AS estimate FROM pg_class WHERE relname = 'table_name';
 ```
+
 ```
 
 ---
@@ -244,11 +264,13 @@ Process files with a helper script
 
 ### Structure
 ```
+
 pdf-processor/
 ├── SKILL.md
 └── scripts/
-    └── extract_pages.py
-```
+└── extract_pages.py
+
+````
 
 ### SKILL.md
 ```markdown
@@ -271,7 +293,7 @@ To extract specific pages from a PDF:
 
 ```bash
 python3 scripts/extract_pages.py input.pdf 1-5 output.pdf
-```
+````
 
 ## Arguments
 
@@ -283,7 +305,8 @@ python3 scripts/extract_pages.py input.pdf 1-5 output.pdf
 
 - Extract first 10 pages: `python3 scripts/extract_pages.py doc.pdf 1-10 first_ten.pdf`
 - Extract single page: `python3 scripts/extract_pages.py doc.pdf 5-5 page_five.pdf`
-```
+
+````
 
 ### scripts/extract_pages.py
 ```python
@@ -304,4 +327,4 @@ def extract_pages(input_path, page_range, output_path):
 
 if __name__ == '__main__':
     extract_pages(sys.argv[1], sys.argv[2], sys.argv[3])
-```
+````

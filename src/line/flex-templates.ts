@@ -14,42 +14,42 @@ export type ListItem = {
   action?: CardAction;
 };
 
-export function createInfoCard(): null {
+export function createInfoCard(_params?: unknown): null {
   return null;
 }
 
-export function createListCard(): null {
+export function createListCard(_params?: unknown): null {
   return null;
 }
 
-export function createImageCard(): null {
+export function createImageCard(_params?: unknown): null {
   return null;
 }
 
-export function createActionCard(): null {
+export function createActionCard(_params?: unknown): null {
   return null;
 }
 
-export function createReceiptCard(): null {
+export function createReceiptCard(_params?: unknown): null {
   return null;
 }
 
-export function createMediaPlayerCard(): null {
+export function createMediaPlayerCard(_params?: unknown): null {
   return null;
 }
 
-export function createEventCard(): null {
+export function createEventCard(_params?: unknown): null {
   return null;
 }
 
-export function createAgendaCard(): null {
+export function createAgendaCard(_params?: unknown): null {
   return null;
 }
 
-export function createDeviceControlCard(): null {
+export function createDeviceControlCard(_params?: unknown): null {
   return null;
 }
 
-export function createAppleTvRemoteCard(): null {
+export function createAppleTvRemoteCard(_params?: unknown): null {
   return null;
 }
