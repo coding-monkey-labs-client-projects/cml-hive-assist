@@ -4,7 +4,8 @@ import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import type { ChannelPlugin } from "../channels/plugins/types.js";
 import type { CmlHiveAssistConfig } from "../config/config.js";
-import { discordPlugin } from "../../extensions/discord/src/channel.js";
+// Removed: Discord channel removed
+// import { discordPlugin } from "../../extensions/discord/src/channel.js";
 import { slackPlugin } from "../../extensions/slack/src/channel.js";
 import { telegramPlugin } from "../../extensions/telegram/src/channel.js";
 import { runSecurityAudit } from "./audit.js";
@@ -391,7 +392,8 @@ describe("security audit", () => {
     );
   });
 
-  it("flags Discord native commands without a guild user allowlist", async () => {
+  // Skipped: Discord channel removed
+  it.skip("flags Discord native commands without a guild user allowlist", async () => {
     const prevStateDir = process.env.CML_HIVE_ASSIST_STATE_DIR;
     const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "cml-hive-assist-security-audit-discord-"));
     process.env.CML_HIVE_ASSIST_STATE_DIR = tmp;
@@ -438,7 +440,8 @@ describe("security audit", () => {
     }
   });
 
-  it("does not flag Discord slash commands when dm.allowFrom includes a Discord snowflake id", async () => {
+  // Skipped: Discord channel removed
+  it.skip("does not flag Discord slash commands when dm.allowFrom includes a Discord snowflake id", async () => {
     const prevStateDir = process.env.CML_HIVE_ASSIST_STATE_DIR;
     const tmp = await fs.mkdtemp(
       path.join(os.tmpdir(), "cml-hive-assist-security-audit-discord-allowfrom-snowflake-"),
@@ -487,7 +490,8 @@ describe("security audit", () => {
     }
   });
 
-  it("flags Discord slash commands when access-group enforcement is disabled and no users allowlist exists", async () => {
+  // Skipped: Discord channel removed
+  it.skip("flags Discord slash commands when access-group enforcement is disabled and no users allowlist exists", async () => {
     const prevStateDir = process.env.CML_HIVE_ASSIST_STATE_DIR;
     const tmp = await fs.mkdtemp(
       path.join(os.tmpdir(), "cml-hive-assist-security-audit-discord-open-"),

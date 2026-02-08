@@ -74,12 +74,10 @@ describe("channels command", () => {
     });
     setActivePluginRegistry(
       createTestRegistry([
-        { pluginId: "discord", plugin: discordPlugin, source: "test" },
+        // Removed: Discord, Signal, iMessage channels removed
         { pluginId: "slack", plugin: slackPlugin, source: "test" },
         { pluginId: "telegram", plugin: telegramPlugin, source: "test" },
         { pluginId: "whatsapp", plugin: whatsappPlugin, source: "test" },
-        { pluginId: "signal", plugin: signalPlugin, source: "test" },
-        { pluginId: "imessage", plugin: imessagePlugin, source: "test" },
       ]),
     );
   });
@@ -129,7 +127,8 @@ describe("channels command", () => {
     expect(next.channels?.slack?.appToken).toBe("xapp-1");
   });
 
-  it("deletes a non-default discord account", async () => {
+  // Skipped: Discord channel removed
+  it.skip("deletes a non-default discord account", async () => {
     configMocks.readConfigFileSnapshot.mockResolvedValue({
       ...baseSnapshot,
       config: {
@@ -174,7 +173,8 @@ describe("channels command", () => {
     expect(next.channels?.whatsapp?.accounts?.family?.name).toBe("Family Phone");
   });
 
-  it("adds a second signal account with a distinct name", async () => {
+  // Skipped: Signal channel removed
+  it.skip("adds a second signal account with a distinct name", async () => {
     configMocks.readConfigFileSnapshot.mockResolvedValue({
       ...baseSnapshot,
       config: {
@@ -355,7 +355,8 @@ describe("channels command", () => {
     expect(telegramIndex).toBeLessThan(whatsappIndex);
   });
 
-  it("surfaces Discord privileged intent issues in channels status output", () => {
+  // Skipped: Discord channel removed
+  it.skip("surfaces Discord privileged intent issues in channels status output", () => {
     const lines = formatGatewayChannelsStatusLines({
       channelAccounts: {
         discord: [
@@ -375,7 +376,8 @@ describe("channels command", () => {
     );
   });
 
-  it("surfaces Discord permission audit issues in channels status output", () => {
+  // Skipped: Discord channel removed
+  it.skip("surfaces Discord permission audit issues in channels status output", () => {
     const lines = formatGatewayChannelsStatusLines({
       channelAccounts: {
         discord: [

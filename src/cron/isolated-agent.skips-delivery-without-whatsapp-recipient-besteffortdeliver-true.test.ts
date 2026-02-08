@@ -4,8 +4,9 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { CliDeps } from "../cli/deps.js";
 import type { CmlHiveAssistConfig } from "../config/config.js";
 import type { CronJob } from "./types.js";
-import { discordPlugin } from "../../extensions/discord/src/channel.js";
-import { setDiscordRuntime } from "../../extensions/discord/src/runtime.js";
+// Removed: Discord channel removed
+// import { discordPlugin } from "../../extensions/discord/src/channel.js";
+// import { setDiscordRuntime } from "../../extensions/discord/src/runtime.js";
 import { telegramPlugin } from "../../extensions/telegram/src/channel.js";
 import { setTelegramRuntime } from "../../extensions/telegram/src/runtime.js";
 import { whatsappPlugin } from "../../extensions/whatsapp/src/channel.js";
@@ -93,14 +94,14 @@ describe("runCronIsolatedAgentTurn", () => {
     vi.mocked(runEmbeddedPiAgent).mockReset();
     vi.mocked(loadModelCatalog).mockResolvedValue([]);
     const runtime = createPluginRuntime();
-    setDiscordRuntime(runtime);
+    // Removed: setDiscordRuntime(runtime);
     setTelegramRuntime(runtime);
     setWhatsAppRuntime(runtime);
     setActivePluginRegistry(
       createTestRegistry([
         { pluginId: "whatsapp", plugin: whatsappPlugin, source: "test" },
         { pluginId: "telegram", plugin: telegramPlugin, source: "test" },
-        { pluginId: "discord", plugin: discordPlugin, source: "test" },
+        // Removed: Discord channel removed
       ]),
     );
   });
@@ -401,7 +402,8 @@ describe("runCronIsolatedAgentTurn", () => {
     });
   });
 
-  it("delivers via discord when configured", async () => {
+  // Skipped: Discord channel removed
+  it.skip("delivers via discord when configured", async () => {
     await withTempHome(async (home) => {
       const storePath = await writeSessionStore(home);
       const deps: CliDeps = {
